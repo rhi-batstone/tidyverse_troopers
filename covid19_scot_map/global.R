@@ -26,4 +26,3 @@ scotland <- st_read("raw_data/SG_NHS_HealthBoards_2019/SG_NHS_HealthBoards_2019.
 joined_map_data <- scotland %>%
   st_transform("+proj=longlat +datum=WGS84") %>%
   left_join(management, by = "official_name")
-

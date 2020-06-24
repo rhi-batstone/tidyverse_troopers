@@ -1,41 +1,40 @@
 server <- function(input, output) {
-  
   joined_map_data_reactive <- reactive({
     joined_map_data %>%
       filter(
         date_code <= input$date,
-        variable %in% input$data
-      )
+        variable == input$data
+      ) %>% 
+      group_by(official_name) %>% 
+      summarise(total = max(value))
   })
-  
-  
-  
+
+
+
   output$scot_plot <- renderLeaflet({
-    
-    
-    bins <- c(0, 1000, 2000, 3000, 4000, 5000, Inf)
-    pal <- colorBin("viridis", domain = joined_map_data_reactive()$value)
-    
+    bins <- c(0, max(joined_map_data_reactive()$total))
+    pal <- colorBin("viridis", domain = joined_map_data_reactive()$total)
+
     labels <- sprintf(
       "<strong>%s</strong><br/>%g",
-      joined_map_data_reactive()$official_name, joined_map_data_reactive()$value
+      joined_map_data_reactive()$official_name, joined_map_data_reactive()$total
     ) %>% lapply(htmltools::HTML)
-    
-    ##----------------------------------------------------------------
+
+    ## ----------------------------------------------------------------
     ##                         Leaflet Plot                         --
-    ##----------------------------------------------------------------
-    
-    
-    joined_map_data_reactive() %>% 
+    ## ----------------------------------------------------------------
+
+
+    joined_map_data_reactive() %>%
       leaflet() %>%
       addProviderTiles("MapBox",
-                       options = providerTileOptions(
-                         id = "mapbox.light",
-                         accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
-                       )
+        options = providerTileOptions(
+          id = "mapbox.light",
+          accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
+        )
       ) %>%
       addPolygons(
-        fillColor = ~ pal(value),
+        fillColor = ~ pal(total),
         weight = 2,
         opacity = 1,
         color = "white",
@@ -59,9 +58,8 @@ server <- function(input, output) {
         )
       ) %>%
       addLegend(
-        pal = pal, values = ~value, opacity = 0.7, title = "# Positive Cases",
+        pal = pal, values = ~total, opacity = 0.7, title = "# Positive Cases",
         position = "topleft"
       )
-    
   })
 }
