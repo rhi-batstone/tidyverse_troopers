@@ -1,29 +1,27 @@
+
+#################################################################
+##                          Libraries                          ##
+#################################################################
+
+
+
 library(tidyverse)
-library(janitor)
 library(sf)
+library(leaflet)
 library(shiny)
 
 
-management <- read_csv("../raw_data/covid19_management.csv") %>%
-    clean_names()
 
-positive_cases <- management %>%
-    filter(
-        variable %in% c("Testing - Cumulative people tested for COVID-19 - Positive"),
-        official_name != "Scotland"
-    ) %>%
-    select(-c(
-        feature_code,
-        measurement,
-        units
-    )) %>%
-    mutate(
-        value = str_replace_all(value, "\\*", "0"),
-        value = as.numeric(value)
-    )
+##################################################################
+##                        Data Wrangling                        ##
+##################################################################
 
+
+positive_cases <- read_csv("positive_cases.csv")
+
+## Joining the shapefile to the data
 # from: https://data.gov.uk/dataset/27d0fe5f-79bb-4116-aec9-a8e565ff756a/nhs-health-boards
-scotland <- st_read("../raw_data/SG_NHS_HealthBoards_2019/SG_NHS_HealthBoards_2019.shp") %>%
+scotland <- st_read("raw_data/SG_NHS_HealthBoards_2019/SG_NHS_HealthBoards_2019.shp") %>%
     rename("official_name" = HBName)
 
 joined_map_data <- scotland %>%
@@ -33,85 +31,104 @@ joined_map_data <- scotland %>%
     summarise(total = max(value))
 
 
+##################################################################
+##                              UI                              ##
+##################################################################
 
-# Define UI for application that draws a histogram
+
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Positive Covid-19 cases"),
+    titlePanel("Scot Gov Covid-19 management"),
 
     # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
+    fluidRow(
+        column(4,
             sliderInput("date",
                         "Date Range:",
                         min = min(joined_map_data$date_code),
                         max = max(joined_map_data$date_code),
-                        value = max(joined_map_data$date_code)
-        )),
+                        value = min(joined_map_data$date_code)),
+        
+            selectInput("data", label = h3("Data type"), 
+                    choices = list("Positive" = "Testing - Cumulative people tested for COVID-19 - Positive", 
+                                   "Patients in Hospital" = "COVID-19 patients in hospital - Confirmed", 
+                                   "Patients ICU" = "COVID-19 patients in ICU - Total"), 
+                    selected = "Positive")),
 
-        # Show a plot of the generated distribution
-        mainPanel(
+        #
+        column(4,
            leafletOutput("scot_plot")
-        )
+        ))
     )
-)
+    
 
-# Define server logic required to draw a histogram
+
+##################################################################
+##                            Server                            ##
+##################################################################
+
+
 server <- function(input, output) {
 
+    
+    bins <- seq(0, max(joined_map_data$total), length.out = 6)
+    pal <- colorBin("plasma", domain = joined_map_data$total, bins = bins)
+    
+    labels <- sprintf(
+        "<strong>%s</strong><br/>%g",
+        joined_map_data$official_name, joined_map_data$total
+    ) %>% lapply(htmltools::HTML)
+    
     output$scot_plot <- renderLeaflet({
         
-        # leaflet plot
-        bins <- seq(0, 5000, length.out = 11)
-        pal <- colorBin("plasma", domain = joined_map_data$total, bins = bins)
         
-        labels <- sprintf(
-            "<strong>%s</strong><br/>%g",
-            joined_map_data$official_name, joined_map_data$total
-        ) %>% lapply(htmltools::HTML)
-        
-        
-        
+      
+##----------------------------------------------------------------
+##                         Leaflet Plot                         --
+##----------------------------------------------------------------
+      
+      
         joined_map_data %>%
-            # filter(date_code <= input$date) %>%
-            # group_by(official_name) %>%
-            # summarise(total = max(value)) %>% 
-            leaflet() %>%
-            addProviderTiles("MapBox",
-                             options = providerTileOptions(
-                                 id = "mapbox.light",
-                                 accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
-                             )
-            ) %>%
-            addPolygons(
-                fillColor = ~ pal(total),
-                weight = 2,
-                opacity = 1,
-                color = "white",
-                dashArray = "3",
-                fillOpacity = 0.7,
-                highlight = highlightOptions(
-                    weight = 5,
-                    color = "#666",
-                    dashArray = "",
-                    fillOpacity = 0.7,
-                    bringToFront = TRUE
-                ),
-                label = labels,
-                labelOptions = labelOptions(
-                    style = list(
-                        "font-weight" = "normal",
-                        padding = "3px 8px"
-                    ),
-                    textsize = "15px",
-                    direction = "auto"
-                )
-            ) %>%
-            addLegend(
-                pal = pal, values = ~total, opacity = 0.7, title = "# Positive Cases",
-                position = "topleft"
-            )
+            #filter(
+              #date_code <= input$date,
+              #variable == input$data
+              #) %>% 
+        leaflet() %>%
+        addProviderTiles("MapBox",
+                         options = providerTileOptions(
+                           id = "mapbox.light",
+                           accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
+                         )
+        ) %>%
+        addPolygons(
+          fillColor = ~ pal(total),
+          weight = 2,
+          opacity = 1,
+          color = "white",
+          dashArray = "3",
+          fillOpacity = 0.7,
+          highlight = highlightOptions(
+            weight = 5,
+            color = "#666",
+            dashArray = "",
+            fillOpacity = 0.7,
+            bringToFront = TRUE
+          ),
+          label = labels,
+          labelOptions = labelOptions(
+            style = list(
+              "font-weight" = "normal",
+              padding = "3px 8px"
+            ),
+            textsize = "15px",
+            direction = "auto"
+          )
+        ) %>%
+        addLegend(
+          pal = pal, values = ~total, opacity = 0.7, title = "# Positive Cases",
+          position = "topleft"
+        )
         
     })
 }

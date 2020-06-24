@@ -1,7 +1,0 @@
-testing <- management %>% 
-  filter(variable %in% c(
-    "Testing - Cumulative people tested for COVID-19 - Positive",
-    "Testing - Cumulative people tested for COVID-19 - Negative")
-    ) %>% 
-  group_by(date_code) %>% 
-  summarise(sum(max(as.numeric(value))))
