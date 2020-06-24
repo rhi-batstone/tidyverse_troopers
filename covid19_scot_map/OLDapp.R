@@ -4,7 +4,6 @@
 #################################################################
 
 
-
 library(tidyverse)
 library(sf)
 library(leaflet)
@@ -26,9 +25,7 @@ scotland <- st_read("raw_data/SG_NHS_HealthBoards_2019/SG_NHS_HealthBoards_2019.
 
 joined_map_data <- scotland %>%
     st_transform("+proj=longlat +datum=WGS84") %>%
-    left_join(positive_cases, by = "official_name") %>% 
-    group_by(official_name) %>%
-    summarise(total = max(value))
+    left_join(positive_cases, by = "official_name")
 
 
 ##################################################################
@@ -71,13 +68,20 @@ ui <- fluidPage(
 
 server <- function(input, output) {
 
-    
-    bins <- seq(0, max(joined_map_data$total), length.out = 6)
-    pal <- colorBin("plasma", domain = joined_map_data$total, bins = bins)
+joined_map_data_reactive <- reactive({
+  joined_map_data %>% 
+  filter(
+    date_code <= input$date,
+    variable == input$data
+  )
+  })
+  
+    bins <- seq(0, max(joined_map_data_reactive()$value), length.out = 6)
+    pal <- colorBin("viridis", domain = joined_map_data_reactive()$value)
     
     labels <- sprintf(
         "<strong>%s</strong><br/>%g",
-        joined_map_data$official_name, joined_map_data$total
+        joined_map_data_reactive()$official_name, joined_map_data_reactive()$total
     ) %>% lapply(htmltools::HTML)
     
     output$scot_plot <- renderLeaflet({
@@ -89,11 +93,7 @@ server <- function(input, output) {
 ##----------------------------------------------------------------
       
       
-        joined_map_data %>%
-            #filter(
-              #date_code <= input$date,
-              #variable == input$data
-              #) %>% 
+      joined_map_data_reactive() %>% 
         leaflet() %>%
         addProviderTiles("MapBox",
                          options = providerTileOptions(
@@ -102,7 +102,7 @@ server <- function(input, output) {
                          )
         ) %>%
         addPolygons(
-          fillColor = ~ pal(total),
+          fillColor = ~ pal(value),
           weight = 2,
           opacity = 1,
           color = "white",
@@ -126,7 +126,7 @@ server <- function(input, output) {
           )
         ) %>%
         addLegend(
-          pal = pal, values = ~total, opacity = 0.7, title = "# Positive Cases",
+          pal = pal, values = ~value, opacity = 0.7, title = "# Positive Cases",
           position = "topleft"
         )
         
