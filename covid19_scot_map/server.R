@@ -58,7 +58,7 @@ server <- function(input, output) {
         )
       ) %>%
       addLegend(
-        pal = pal, values = ~total, opacity = 0.7, title = "# Positive Cases",
+        pal = pal, values = ~total, opacity = 0.7, title = "Count",
         position = "topleft"
       )
   })

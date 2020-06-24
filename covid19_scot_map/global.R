@@ -16,7 +16,7 @@ library(shiny)
 ##################################################################
 
 
-management <- read_csv("management_clean.csv")
+management <- read_csv("clean_data/management_clean.csv")
 
 ## Joining the shapefile to the data
 # from: https://data.gov.uk/dataset/27d0fe5f-79bb-4116-aec9-a8e565ff756a/nhs-health-boards
