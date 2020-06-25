@@ -5,6 +5,6 @@ account: rhi-batstone
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2497391
-bundleId: 3317390
+bundleId: 3317464
 url: https://rhi-batstone.shinyapps.io/covid19_scot_map/
-when: 1593126075.71208
+when: 1593127478.01961

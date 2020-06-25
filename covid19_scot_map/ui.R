@@ -45,7 +45,9 @@ ui <- fluidPage(
           
           selectInput("data",
             label = "Data type",
-            choices = data_types, # Created in global
+            choices = list("Testing - Cumulative people tested for COVID-19 - Positive",
+                           "COVID-19 patients in ICU - Total",
+                           "COVID-19 patients in hospital - Confirmed"),
             selected = "Testing - Cumulative people tested for COVID-19 - Positive"
           )
         ),
@@ -78,8 +80,10 @@ ui <- fluidPage(
           
           
           selectInput("data",
-                      label = h3("Data type"),
-                      choices = data_types,
+                      label = "Data type",
+                      choices = list("Testing - Cumulative people tested for COVID-19 - Positive",
+                                     "COVID-19 patients in ICU - Total",
+                                     "COVID-19 patients in hospital - Confirmed"),
                       selected = "Testing - Cumulative people tested for COVID-19 - Positive"
           )
         ),

@@ -5,12 +5,13 @@ server <- function(input, output) {
       # filter(variable == input$data
       # ) %>%
       filter(date_code <= input$date) %>%
-      group_by(official_name, variable) %>%
+      group_by(official_name) %>%
       summarise(total = max(value))
   })
 
 
   output$scot_plot <- renderLeaflet({
+    
     bins <- c(0, max(joined_map_data_reactive()$total), 6)
     pal <- colorBin("plasma", domain = joined_map_data_reactive()$total)
 

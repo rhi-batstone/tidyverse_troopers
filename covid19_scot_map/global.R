@@ -28,5 +28,5 @@ joined_map_data <- scotland %>%
   left_join(management, by = "official_name")
 
 #creating data types for ui
-data_types <-  list(unique(joined_map_data$variable))
+data_types <-  unique(joined_map_data$variable)
 
