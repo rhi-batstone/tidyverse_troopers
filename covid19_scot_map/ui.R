@@ -1,9 +1,9 @@
 # Define the app's user interface
 ui <- fixedPage(
 
-  # tags$head(
-  #   tags$link(rel = "stylesheet", type = "text/css", href = "images/app.css")
-  # ),
+  tags$head(
+    tags$link(rel = "stylesheet", type = "text/css", href = "images/app.css")
+  ),
 
   navbarPage(
 

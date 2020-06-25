@@ -4,7 +4,7 @@ library(lubridate)
 library(sf)
 
 
-management <- read_csv("covid19_scot_map/raw_data/covid19_management.csv") %>%
+management <- read_csv("raw_data/covid19_management.csv") %>%
   clean_names()
 
 management_clean <- management %>%
@@ -27,5 +27,5 @@ management_clean <- management %>%
     date_code = as_date(date_code)
   )
 
-write_csv(management_clean, "covid19_scot_map/management_clean.csv")
+write_csv(management_clean, "clean_data/management_clean.csv")
 

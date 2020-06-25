@@ -1,14 +1,13 @@
 server <- function(input, output) {
+  
   joined_map_data_reactive <- reactive({
     joined_map_data %>%
-      filter(
-        date_code <= input$date,
-        variable %in% input$data
-      ) %>% 
-      group_by(official_name) %>% 
+      # filter(variable <= input$data
+      # ) %>%
+      filter(date_code <= input$date) %>%
+      group_by(official_name) %>%
       summarise(total = max(value))
   })
-
 
 
   output$scot_plot <- renderLeaflet({
@@ -28,10 +27,11 @@ server <- function(input, output) {
     joined_map_data_reactive() %>%
       leaflet() %>%
       addProviderTiles("MapBox",
-      options = providerTileOptions(
-       id = "mapbox.light",
-       accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
-      )) %>%
+        options = providerTileOptions(
+          id = "mapbox.light",
+          accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
+        )
+      ) %>%
       addPolygons(
         fillColor = ~ pal(total),
         weight = 2,
