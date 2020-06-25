@@ -3,7 +3,7 @@ server <- function(input, output) {
     joined_map_data %>%
       filter(
         date_code <= input$date,
-        variable == input$data
+        variable %in% input$data
       ) %>% 
       group_by(official_name) %>% 
       summarise(total = max(value))
@@ -12,7 +12,7 @@ server <- function(input, output) {
 
 
   output$scot_plot <- renderLeaflet({
-    bins <- c(0, max(joined_map_data_reactive()$total))
+    bins <- c(0, max(joined_map_data_reactive()$total), 6)
     pal <- colorBin("viridis", domain = joined_map_data_reactive()$total)
 
     labels <- sprintf(
@@ -28,11 +28,10 @@ server <- function(input, output) {
     joined_map_data_reactive() %>%
       leaflet() %>%
       addProviderTiles("MapBox",
-        options = providerTileOptions(
-          id = "mapbox.light",
-          accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
-        )
-      ) %>%
+      options = providerTileOptions(
+       id = "mapbox.light",
+       accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
+      )) %>%
       addPolygons(
         fillColor = ~ pal(total),
         weight = 2,
