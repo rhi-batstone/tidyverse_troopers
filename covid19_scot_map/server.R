@@ -2,8 +2,8 @@ server <- function(input, output) {
   
   joined_map_data_reactive <- reactive({
     joined_map_data %>%
-      # filter(variable <= input$data
-      # ) %>%
+      filter(variable == input$data[1]
+      ) %>%
       filter(date_code <= input$date) %>%
       group_by(official_name) %>%
       summarise(total = max(value))
@@ -16,7 +16,8 @@ server <- function(input, output) {
 
     labels <- sprintf(
       "<strong>%s</strong><br/>%g",
-      joined_map_data_reactive()$official_name, joined_map_data_reactive()$total
+      joined_map_data_reactive()$official_name, 
+      joined_map_data_reactive()$total
     ) %>% lapply(htmltools::HTML)
 
     ## ----------------------------------------------------------------
@@ -26,12 +27,14 @@ server <- function(input, output) {
 
     joined_map_data_reactive() %>%
       leaflet() %>%
-      addProviderTiles("MapBox",
-        options = providerTileOptions(
-          id = "mapbox.light",
-          accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
-        )
-      ) %>%
+      # addProviderTiles(
+      #   providers$OpenStreetMap
+        # "MapBox",
+        # options = providerTileOptions(
+        #   id = "mapbox.light",
+        #   accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
+      #   # )
+      # ) %>%
       addPolygons(
         fillColor = ~ pal(total),
         weight = 2,
@@ -57,7 +60,10 @@ server <- function(input, output) {
         )
       ) %>%
       addLegend(
-        pal = pal, values = ~total, opacity = 0.7, title = "Count",
+        pal = pal, 
+        values = ~total, 
+        opacity = 0.7, 
+        title = "Count",
         position = "topleft"
       )
   })

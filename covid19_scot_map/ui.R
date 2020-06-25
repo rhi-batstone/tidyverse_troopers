@@ -18,8 +18,7 @@ ui <- fixedPage(
     ),
     windowTitle = "Tidyverse Troopers",
 
-    # Parent sections organised by tab
-    # Overview parent tab
+  
     # Contains the MVP and a broad overview of the data
     tabPanel(
       title = "Map",
@@ -41,19 +40,37 @@ ui <- fixedPage(
             value = min(joined_map_data$date_code)
           ),
 
+          
           selectInput("data",
             label = h3("Data type"),
-            choices = list(
-              "Testing - Cumulative people tested for COVID-19 - Positive" = 1,
-              "COVID-19 patients in hospital - Confirmed" = 2,
-              "COVID-19 patients in ICU - Total" = 3
-            ),
-            selected = 1
+            choices = data_types,
+            selected = "Testing - Cumulative people tested for COVID-19 - Positive"
           )
         ),
 
         mainPanel(
           leafletOutput("scot_plot")
+        )
+      )
+    ),
+    
+    tabPanel(
+      title = "Data Viz",
+      
+      # App title
+      titlePanel("Scot Gov Covid-19 management"),
+      
+      
+      # Sidebar with a slider input for date and selector for data
+      sidebarLayout(
+        
+        
+        sidebarPanel(
+          
+        ),
+        
+        mainPanel(
+          
         )
       )
     )
