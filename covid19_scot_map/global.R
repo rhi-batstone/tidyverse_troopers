@@ -9,7 +9,7 @@ library(tidyverse)
 library(sf)
 library(leaflet)
 library(shiny)
-
+library(shinythemes)
 
 ##################################################################
 ##                        Data Wrangling                        ##
@@ -27,6 +27,6 @@ joined_map_data <- scotland %>%
   st_transform("+proj=longlat +datum=WGS84") %>%
   left_join(management, by = "official_name")
 
-
-data_types <-  as.character(unique(joined_map_data$variable))
+#creating data types for ui
+data_types <-  list(unique(joined_map_data$variable))
 

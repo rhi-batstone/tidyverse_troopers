@@ -2,17 +2,17 @@ server <- function(input, output) {
   
   joined_map_data_reactive <- reactive({
     joined_map_data %>%
-      filter(variable == input$data[1]
-      ) %>%
+      # filter(variable == input$data
+      # ) %>%
       filter(date_code <= input$date) %>%
-      group_by(official_name) %>%
+      group_by(official_name, variable) %>%
       summarise(total = max(value))
   })
 
 
   output$scot_plot <- renderLeaflet({
     bins <- c(0, max(joined_map_data_reactive()$total), 6)
-    pal <- colorBin("viridis", domain = joined_map_data_reactive()$total)
+    pal <- colorBin("plasma", domain = joined_map_data_reactive()$total)
 
     labels <- sprintf(
       "<strong>%s</strong><br/>%g",

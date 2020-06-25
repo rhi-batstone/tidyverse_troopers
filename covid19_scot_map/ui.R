@@ -1,11 +1,13 @@
-# Define the app's user interface
-ui <- fixedPage(
+ui <- fluidPage(
 
-  tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "images/app.css")
-  ),
+  # tags$head(
+  #   tags$link(rel = "stylesheet", type = "text/css", href = "images/app.css")
+  # ),
 
+  theme = shinytheme("flatly"),
+  
   navbarPage(
+    
 
     # Page title
     # Displayed to the left of the navigation bar
@@ -42,8 +44,8 @@ ui <- fixedPage(
 
           
           selectInput("data",
-            label = h3("Data type"),
-            choices = data_types,
+            label = "Data type",
+            choices = data_types, # Created in global
             selected = "Testing - Cumulative people tested for COVID-19 - Positive"
           )
         ),
@@ -67,6 +69,19 @@ ui <- fixedPage(
         
         sidebarPanel(
           
+          sliderInput("date",
+                      "Date Range:",
+                      min = min(joined_map_data$date_code),
+                      max = max(joined_map_data$date_code),
+                      value = min(joined_map_data$date_code)
+          ),
+          
+          
+          selectInput("data",
+                      label = h3("Data type"),
+                      choices = data_types,
+                      selected = "Testing - Cumulative people tested for COVID-19 - Positive"
+          )
         ),
         
         mainPanel(
