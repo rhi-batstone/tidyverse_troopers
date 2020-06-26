@@ -37,10 +37,10 @@ server <- function(input, output) {
       addPolygons(
         fillColor = ~ pal(total),
         weight = 2,
-        opacity = .5,
+        opacity = 1,
         color = "white",
         dashArray = "3",
-        fillOpacity = 0.7,
+        fillOpacity = 0.5,
         highlight = highlightOptions(
           weight = 5,
           color = "#666",
