@@ -28,8 +28,9 @@ server <- function(input, output) {
       left_join(management_reactive(), by = c("HBName" = "official_name"))
 
     # creates bins and palette for leaflet plot
-    bins <- c(0, 1000, 2000, 3000, 4000, 5000, Inf)
-    pal <- colorBin("plasma", domain = scotland_count$total)
+    #bins <- seq(0, max(management_reactive()$total), length.out = 6)
+    
+    pal <- colorBin("plasma", domain = scotland_count$total, bins = 5)
 
     # creates hover over labels
     labels <- sprintf(
@@ -80,8 +81,12 @@ server <- function(input, output) {
 
 
   output$eg_plot <- renderPlot({
-    management_reactive() %>%
-      ggplot(aes(x = date_code, group = date_code, y = total)) +
+    
+    management %>%
+      filter(variable == input$data,
+             date_code <= input$date) %>%
+      group_by(official_name) %>% 
+      ggplot(aes(x = date_code, y = max(value))) +
       geom_line()
   })
 }
