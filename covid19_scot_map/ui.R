@@ -23,17 +23,15 @@ ui <- fluidPage(
   
     # Contains the MVP and a broad overview of the data
     tabPanel(
-      title = "Map",
+      title = "Health Board Regions",
 
       # App title
       titlePanel("Scot Gov Covid-19 management"),
 
 
       # Sidebar with a slider input for date and selector for data
-      sidebarLayout(
-
-
-        sidebarPanel(
+      fluidRow(
+        column(4,
           
           sliderInput("date",
             "Date Range:",
@@ -45,22 +43,25 @@ ui <- fluidPage(
           
           selectInput("data",
             label = "Data type",
-            choices = list("Testing - Cumulative people tested for COVID-19 - Positive",
+            choices = list("COVID-19 positive cases" = "Testing - Cumulative people tested for COVID-19 - Positive",
                            "COVID-19 patients in ICU - Total",
                            "COVID-19 patients in hospital - Suspected",
                            "COVID-19 patients in hospital - Confirmed"),
             selected = "Testing - Cumulative people tested for COVID-19 - Positive"
-          )
-        ),
-
-        mainPanel(
+          )),
+        
+        column(4,
+        
           leafletOutput("scot_plot")
+       ),
+        column(4,
+       h4("Johnny's Plot")
+       )
         )
-      )
-    ),
+      ),
     
     tabPanel(
-      title = "Data Viz",
+      title = "Scotland",
       
       # App title
       titlePanel("Scot Gov Covid-19 management"),
@@ -72,7 +73,7 @@ ui <- fluidPage(
         
         sidebarPanel(
           
-          sliderInput("date",
+          sliderInput("date_2",
                       "Date Range:",
                       min = min(joined_map_data$date_code),
                       max = max(joined_map_data$date_code),
@@ -80,9 +81,9 @@ ui <- fluidPage(
           ),
           
           
-          selectInput("data",
+          selectInput("data_2",
                       label = "Data type",
-                      choices = list("Testing - Cumulative people tested for COVID-19 - Positive",
+                      choices = list("COVID-19 Positive cases" = "Testing - Cumulative people tested for COVID-19 - Positive",
                                      "COVID-19 patients in ICU - Total",
                                      "COVID-19 patients in hospital - Suspected",
                                      "COVID-19 patients in hospital - Confirmed"),
@@ -97,3 +98,4 @@ ui <- fluidPage(
     )
   )
 )
+
