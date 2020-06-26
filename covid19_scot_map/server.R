@@ -1,24 +1,37 @@
 server <- function(input, output) {
   
-  joined_map_data_reactive <- reactive({
-    joined_map_data %>%
-      # filter(variable == input$data
-      # ) %>%
+  # joined_map_data_reactive <- reactive({
+  #   joined_map_data %>%
+  #     filter(variable == input$data
+  #     ) %>%
+  #     filter(date_code <= input$date) %>%
+  #     group_by(HBName) %>%
+  # mutate(total = max(value)) %>% 
+  #   ungroup()
+
+  management_reactive <- reactive({
+    management %>%
+      filter(variable == input$data
+      ) %>%
       filter(date_code <= input$date) %>%
       group_by(official_name) %>%
-      summarise(total = max(value))
+      mutate(total = max(value)) %>% 
+      ungroup()
   })
-
 
   output$scot_plot <- renderLeaflet({
     
-    bins <- c(0, max(joined_map_data_reactive()$total), 6)
-    pal <- colorBin("plasma", domain = joined_map_data_reactive()$total)
+    # Join counts onto bondary geographical shape data 
+    scotland_count <- scotland %>%
+      left_join(management_reactive(), by = c("HBName" = "official_name"))
+    
+    bins <- c(0, 1000, 2000, 3000, 4000, 5000, Inf)
+    pal <- colorBin("plasma", domain = scotland_count$total)
 
     labels <- sprintf(
       "<strong>%s</strong><br/>%g",
-      joined_map_data_reactive()$official_name, 
-      joined_map_data_reactive()$total
+      scotland_count$HBName, 
+      scotland_count$total
     ) %>% lapply(htmltools::HTML)
 
     ## ----------------------------------------------------------------
@@ -26,7 +39,7 @@ server <- function(input, output) {
     ## ----------------------------------------------------------------
 
 
-    joined_map_data_reactive() %>%
+    scotland_count %>%
       leaflet() %>%
       # addProviderTiles(
       #   providers$OpenStreetMap

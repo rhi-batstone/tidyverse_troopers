@@ -1,3 +1,4 @@
+## code for deploying to shiny.io
 # library(rsconnect)
 # deployApp()
 #################################################################
@@ -17,16 +18,13 @@ library(shinythemes)
 
 
 management <- read_csv("clean_data/management_clean.csv")
+scotland <- st_read("clean_data/scotland.shp", quiet = TRUE)
 
-## Joining the shapefile to the data
-# from: https://data.gov.uk/dataset/27d0fe5f-79bb-4116-aec9-a8e565ff756a/nhs-health-boards
-scotland <- st_read("raw_data/SG_NHS_HealthBoards_2019/SG_NHS_HealthBoards_2019.shp") %>%
-  rename("official_name" = HBName)
 
-joined_map_data <- scotland %>%
-  st_transform("+proj=longlat +datum=WGS84") %>%
-  left_join(management, by = "official_name")
+## !!!Don't view this object - RStudio will hang 
+# joined_map_data <- scotland %>%
+#   #st_transform("+proj=longlat +datum=WGS84") %>%
+#   left_join(management, by = c("HBName" = "official_name"))
 
-#creating data types for ui
-data_types <-  unique(joined_map_data$variable)
+
 

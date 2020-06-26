@@ -13,7 +13,7 @@ ui <- fluidPage(
     # Displayed to the left of the navigation bar
     title = div(
       img(
-        src = "images/scotland_hex.svg",
+        src = "covid19_scot_map/images/scotland_hex.svg",
         height = "40px"
       ),
       style = "position: relative; top: -10px"
@@ -47,6 +47,7 @@ ui <- fluidPage(
             label = "Data type",
             choices = list("Testing - Cumulative people tested for COVID-19 - Positive",
                            "COVID-19 patients in ICU - Total",
+                           "COVID-19 patients in hospital - Suspected",
                            "COVID-19 patients in hospital - Confirmed"),
             selected = "Testing - Cumulative people tested for COVID-19 - Positive"
           )
@@ -83,6 +84,7 @@ ui <- fluidPage(
                       label = "Data type",
                       choices = list("Testing - Cumulative people tested for COVID-19 - Positive",
                                      "COVID-19 patients in ICU - Total",
+                                     "COVID-19 patients in hospital - Suspected",
                                      "COVID-19 patients in hospital - Confirmed"),
                       selected = "Testing - Cumulative people tested for COVID-19 - Positive"
           )
