@@ -1,6 +1,7 @@
 ## code for deploying to shiny.io
 # library(rsconnect)
 # deployApp()
+
 #################################################################
 ##                          Libraries                          ##
 #################################################################
@@ -11,20 +12,16 @@ library(sf)
 library(leaflet)
 library(shiny)
 library(shinythemes)
+library(rmapshaper)
 
 ##################################################################
 ##                        Data Wrangling                        ##
 ##################################################################
 
-
+#data file
 management <- read_csv("clean_data/management_clean.csv")
-scotland <- st_read("clean_data/scotland.shp", quiet = TRUE)
 
-
-## !!!Don't view this object - RStudio will hang 
-# joined_map_data <- scotland %>%
-#   #st_transform("+proj=longlat +datum=WGS84") %>%
-#   left_join(management, by = c("HBName" = "official_name"))
-
-
+#shape file and reducing the polygons to increase render speed
+scotland <- st_read("clean_data/scotland.shp", quiet = TRUE) %>%
+  ms_simplify(keep = 0.025)
 

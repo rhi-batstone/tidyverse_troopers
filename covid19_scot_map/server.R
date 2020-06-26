@@ -1,54 +1,39 @@
 server <- function(input, output) {
-  
-  # joined_map_data_reactive <- reactive({
-  #   joined_map_data %>%
-  #     filter(variable == input$data
-  #     ) %>%
-  #     filter(date_code <= input$date) %>%
-  #     group_by(HBName) %>%
-  # mutate(total = max(value)) %>% 
-  #   ungroup()
 
+  #Create reactive dataset
   management_reactive <- reactive({
     management %>%
-      filter(variable == input$data
-      ) %>%
+      filter(variable == input$data) %>%
       filter(date_code <= input$date) %>%
       group_by(official_name) %>%
-      mutate(total = max(value)) %>% 
+      mutate(total = max(value)) %>%
       ungroup()
   })
 
+  ## ----------------------------------------------------------------
+  ##                         Leaflet Plot                         --
+  ## ----------------------------------------------------------------
+  
   output$scot_plot <- renderLeaflet({
-    
-    # Join counts onto bondary geographical shape data 
+
+    # Join counts onto bondary geographical shape data
     scotland_count <- scotland %>%
       left_join(management_reactive(), by = c("HBName" = "official_name"))
-    
+
+    #creates bins and palette for leaflet plot
     bins <- c(0, 1000, 2000, 3000, 4000, 5000, Inf)
     pal <- colorBin("plasma", domain = scotland_count$total)
 
+    # creates hover over labels
     labels <- sprintf(
       "<strong>%s</strong><br/>%g",
-      scotland_count$HBName, 
+      scotland_count$HBName,
       scotland_count$total
     ) %>% lapply(htmltools::HTML)
-
-    ## ----------------------------------------------------------------
-    ##                         Leaflet Plot                         --
-    ## ----------------------------------------------------------------
 
 
     scotland_count %>%
       leaflet() %>%
-      # addProviderTiles(
-      #   providers$OpenStreetMap
-        # "MapBox",
-        # options = providerTileOptions(
-        #   id = "mapbox.light",
-        #   accessToken = Sys.getenv("MAPBOX_ACCESS_TOKEN")
-      #   # )
-      # ) %>%
       addPolygons(
         fillColor = ~ pal(total),
         weight = 2,
@@ -74,11 +59,22 @@ server <- function(input, output) {
         )
       ) %>%
       addLegend(
-        pal = pal, 
-        values = ~total, 
-        opacity = 0.7, 
+        pal = pal,
+        values = ~total,
+        opacity = 0.7,
         title = "Count",
         position = "topleft"
       )
+  })
+  
+  ##################################################################
+  ##              place holder for Johnny's data viz              ##
+  ##################################################################
+  
+  
+  output$eg_plot <- renderPlot({
+    management_reactive() %>%
+      ggplot(aes(x = date_code, group = date_code, y = total)) +
+      geom_line()
   })
 }
