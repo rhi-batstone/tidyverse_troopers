@@ -13,6 +13,7 @@ library(leaflet)
 library(shiny)
 library(shinythemes)
 library(rmapshaper)
+library(lubridate)
 
 ##################################################################
 ##                        Data Wrangling                        ##
