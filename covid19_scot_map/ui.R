@@ -1,12 +1,7 @@
 ui <- fluidPage(
-
-  # tags$head(
-  #   tags$link(rel = "stylesheet", type = "text/css", href = "images/app.css")
-  # ),
   theme = shinytheme("flatly"),
 
   navbarPage(
-
 
     # Page title
     # Displayed to the left of the navigation bar
@@ -17,6 +12,7 @@ ui <- fluidPage(
       ),
       style = "position: relative; top: -10px"
     ),
+
     windowTitle = "Tidyverse Troopers",
 
 
@@ -25,7 +21,7 @@ ui <- fluidPage(
       title = "Health Board Regions",
 
       # App title
-      titlePanel("Scot Gov Covid-19 management"),
+      titlePanel("Covid-19 Management in Scotland"),
 
 
       # Sidebar with a slider input for date and selector for data
@@ -42,11 +38,11 @@ ui <- fluidPage(
 
 
           selectInput("data",
-            label = "Data type",
+            label = "Data type:",
             choices = list(
               "COVID-19 positive cases" = "Testing - Cumulative people tested for COVID-19 - Positive",
               "COVID-19 patients in ICU - Total",
-              "COVID-19 patients in hospital - Suspected",
+              # "COVID-19 patients in hospital - Suspected",
               "COVID-19 patients in hospital - Confirmed"
             ),
             selected = "Testing - Cumulative people tested for COVID-19 - Positive"
@@ -55,7 +51,6 @@ ui <- fluidPage(
 
         column(
           4,
-          h4(" "),
           leafletOutput("scot_plot")
         ),
         column(
@@ -85,11 +80,11 @@ ui <- fluidPage(
 
 
           selectInput("data_2",
-            label = "Data type",
+            label = "Data type:",
             choices = list(
               "COVID-19 Positive cases" = "Testing - Cumulative people tested for COVID-19 - Positive",
               "COVID-19 patients in ICU - Total",
-              "COVID-19 patients in hospital - Suspected",
+              # "COVID-19 patients in hospital - Suspected",
               "COVID-19 patients in hospital - Confirmed"
             ),
             selected = "Testing - Cumulative people tested for COVID-19 - Positive"

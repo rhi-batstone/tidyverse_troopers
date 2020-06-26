@@ -1,26 +1,33 @@
 server <- function(input, output) {
 
-  #Create reactive dataset
+  # Create reactive dataset
   management_reactive <- reactive({
-    management %>%
-      filter(variable == input$data) %>%
-      filter(date_code <= input$date) %>%
-      group_by(official_name) %>%
-      mutate(total = max(value)) %>%
-      ungroup()
+    if (input$data == "Testing - Cumulative people tested for COVID-19 - Positive") {
+      management %>%
+        filter(variable == input$data) %>%
+        filter(date_code <= input$date) %>%
+        group_by(official_name) %>%
+        mutate(total = max(value)) %>%
+        ungroup()
+    } else {
+      management %>%
+        filter(variable == input$data) %>%
+        filter(date_code <= input$date) %>%
+        mutate(total = value)
+    }
   })
 
   ## ----------------------------------------------------------------
   ##                         Leaflet Plot                         --
   ## ----------------------------------------------------------------
-  
+
   output$scot_plot <- renderLeaflet({
 
     # Join counts onto bondary geographical shape data
     scotland_count <- scotland %>%
       left_join(management_reactive(), by = c("HBName" = "official_name"))
 
-    #creates bins and palette for leaflet plot
+    # creates bins and palette for leaflet plot
     bins <- c(0, 1000, 2000, 3000, 4000, 5000, Inf)
     pal <- colorBin("plasma", domain = scotland_count$total)
 
@@ -66,12 +73,12 @@ server <- function(input, output) {
         position = "topleft"
       )
   })
-  
+
   ##################################################################
   ##              place holder for Johnny's data viz              ##
   ##################################################################
-  
-  
+
+
   output$eg_plot <- renderPlot({
     management_reactive() %>%
       ggplot(aes(x = date_code, group = date_code, y = total)) +
