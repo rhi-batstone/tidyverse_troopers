@@ -51,7 +51,7 @@ ui <- fluidPage(
 
         column(
           4,
-          leafletOutput("scot_plot")
+          leafletOutput("scot_plot", height = 600)
         ),
         column(
           4,
