@@ -13,7 +13,7 @@ library(leaflet)
 library(shiny)
 library(shinythemes)
 library(rmapshaper)
-library(lubridate)
+library(plotly)
 
 ##################################################################
 ##                        Data Wrangling                        ##
@@ -26,3 +26,6 @@ management <- read_csv("clean_data/management_clean.csv")
 scotland <- st_read("clean_data/scotland.shp", quiet = TRUE) %>%
   ms_simplify(keep = 0.025)
 
+scotland_covid <- read_csv("clean_data/scotland_covid.csv")
+
+local_authorities <- unique(scotland_covid$local_authority)

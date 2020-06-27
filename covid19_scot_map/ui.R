@@ -25,39 +25,38 @@ ui <- fluidPage(
 
 
       # Sidebar with a slider input for date and selector for data
-      fluidRow(
-        column(
-          4,
+               sidebarLayout(
+                 sidebarPanel(
+                   sliderInput(
+                     "date",
+                     "Date Range:",
+                     min = min(management$date_code),
+                     max = max(management$date_code),
+                     value = max(management$date_code)
+                     ),
+                   
+                   selectInput(
+                     "data",
+                      label = "Data type:",
+                      choices = list(
+                         "COVID-19 positive cases" = "Testing - Cumulative people tested for COVID-19 - Positive",
+                         "COVID-19 patients in ICU - Total",
+                         "COVID-19 patients in hospital - Suspected",
+                         "COVID-19 patients in hospital - Confirmed"),
+                      selected = "Testing - Cumulative people tested for COVID-19 - Positive"),
+                   
+                   tags$a(href="https://statistics.gov.scot/data/coronavirus-covid-19-management-information", "Data Source")
+                   
+                   ),
 
-          sliderInput("date",
-            "Date Range:",
-            min = min(management$date_code),
-            max = max(management$date_code),
-            value = max(management$date_code)
-          ),
-
-
-          selectInput("data",
-            label = "Data type:",
-            choices = list(
-              "COVID-19 positive cases" = "Testing - Cumulative people tested for COVID-19 - Positive",
-              "COVID-19 patients in ICU - Total",
-              "COVID-19 patients in hospital - Suspected",
-              "COVID-19 patients in hospital - Confirmed"
-            ),
-            selected = "Testing - Cumulative people tested for COVID-19 - Positive"
-          )
-        ),
-
-        column(
-          4,
+          mainPanel(
+            column(6,
           leafletOutput("scot_plot", height = 600)
         ),
-        column(
-          4,
+        column(6,
           
-          plotOutput("eg_plot")
-        )
+          plotlyOutput("eg_plot", height = 600)
+        ))
       )
     ),
 
@@ -65,34 +64,24 @@ ui <- fluidPage(
       title = "Scotland",
 
       # App title
-      titlePanel("Scot Gov Covid-19 management"),
+      titlePanel("Covid-19 related Deaths"),
 
 
       # Sidebar with a slider input for date and selector for data
       sidebarLayout(
         sidebarPanel(
-          sliderInput("date_2",
-            "Date Range:",
-            min = min(management$date_code),
-            max = max(management$date_code),
-            value = min(management$date_code)
-          ),
-
-
-          selectInput("data_2",
-            label = "Data type:",
-            choices = list(
-              "COVID-19 Positive cases" = "Testing - Cumulative people tested for COVID-19 - Positive",
-              "COVID-19 patients in ICU - Total",
-              # "COVID-19 patients in hospital - Suspected",
-              "COVID-19 patients in hospital - Confirmed"
-            ),
-            selected = "Testing - Cumulative people tested for COVID-19 - Positive"
-          )
+          checkboxGroupInput("local_auth", label = h3("Local Authorities"), 
+                             choices = local_authorities,
+                             selected = local_authorities)
         ),
-
-        mainPanel()
+        
+        
+        
+        mainPanel(
+          leafletOutput("scot_covid_plot", width = 900, height = 600)
+        )
       )
     )
   )
 )
+

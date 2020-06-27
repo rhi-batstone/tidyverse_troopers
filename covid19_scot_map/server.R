@@ -80,12 +80,47 @@ server <- function(input, output) {
   ##################################################################
 
 
-  output$eg_plot <- renderPlot({
+  output$eg_plot <- renderPlotly({
     
-    management %>%
+    
+    ggplotly(management %>%
       filter(variable == input$data) %>%
       filter(date_code <= input$date) %>%
-      ggplot(aes(x = date_code, y = value, fill = official_name)) +
-      geom_line()
+      ggplot(aes(x = date_code, y = value, col = official_name)) +
+      geom_line() +
+      scale_fill_viridis_b() +
+      labs(
+        x = "Date",
+        y = "Count",
+        title = "Count by Health Board") +
+      theme_classic() +
+      theme(legend.position = 'none') 
+      ) %>%
+      add_trace(colors = "Dark2")
+    
   })
+  
+  
+  output$scot_covid_plot <- renderLeaflet({ 
+    
+    bins = c(0, 5, 17, max(scotland_covid$number_of_deaths))
+    
+    pal <- colorBin(c("#FAF799", "orange", "#FF0000"), 
+                  domain = scotland_covid$number_of_deaths, 
+                  bin = bins)
+  
+  scotland_covid %>%
+    leaflet() %>%
+    addProviderTiles(
+      providers$CartoDB.Positron
+    ) %>%
+    addCircleMarkers(lng = ~long,
+                     lat = ~lat,
+                     fillOpacity = 0.5,
+                     stroke = F,
+                     radius = ~population_2018_based/1000,
+                     color = ~pal(number_of_deaths),
+    )
+  })
+  
 }
