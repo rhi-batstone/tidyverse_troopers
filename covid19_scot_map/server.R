@@ -83,10 +83,9 @@ server <- function(input, output) {
   output$eg_plot <- renderPlot({
     
     management %>%
-      filter(variable == input$data,
-             date_code <= input$date) %>%
-      group_by(official_name) %>% 
-      ggplot(aes(x = date_code, y = max(value), fill = official_name)) +
+      filter(variable == input$data) %>%
+      filter(date_code <= input$date) %>%
+      ggplot(aes(x = date_code, y = value, fill = official_name)) +
       geom_line()
   })
 }
