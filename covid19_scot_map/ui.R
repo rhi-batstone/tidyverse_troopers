@@ -42,7 +42,7 @@ ui <- fluidPage(
             choices = list(
               "COVID-19 positive cases" = "Testing - Cumulative people tested for COVID-19 - Positive",
               "COVID-19 patients in ICU - Total",
-              # "COVID-19 patients in hospital - Suspected",
+              "COVID-19 patients in hospital - Suspected",
               "COVID-19 patients in hospital - Confirmed"
             ),
             selected = "Testing - Cumulative people tested for COVID-19 - Positive"
@@ -55,7 +55,7 @@ ui <- fluidPage(
         ),
         column(
           4,
-          h4("Johnny's Plot"),
+          
           plotOutput("eg_plot")
         )
       )

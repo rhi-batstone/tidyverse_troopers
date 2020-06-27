@@ -12,7 +12,7 @@ server <- function(input, output) {
     } else {
       management %>%
         filter(variable == input$data) %>%
-        filter(date_code <= input$date) %>%
+        filter(date_code == input$date) %>%
         mutate(total = value)
     }
   })
@@ -86,7 +86,7 @@ server <- function(input, output) {
       filter(variable == input$data,
              date_code <= input$date) %>%
       group_by(official_name) %>% 
-      ggplot(aes(x = date_code, y = max(value))) +
+      ggplot(aes(x = date_code, y = max(value), fill = official_name)) +
       geom_line()
   })
 }
