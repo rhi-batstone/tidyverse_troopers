@@ -1,6 +1,6 @@
 ## code for deploying to shiny.io
 # library(rsconnect)
-# deployApp()
+# deployApp("../covid19_scot_map/")
 
 #################################################################
 ##                          Libraries                          ##
@@ -28,4 +28,5 @@ scotland <- st_read("clean_data/scotland.shp", quiet = TRUE) %>%
 
 scotland_covid <- read_csv("clean_data/scotland_covid.csv")
 
-local_authorities <- unique(scotland_covid$local_authority)
+local_authorities <- unique(scotland_covid$local_authority) %>% 
+  sort()

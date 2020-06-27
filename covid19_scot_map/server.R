@@ -110,6 +110,7 @@ server <- function(input, output) {
                   bin = bins)
   
   scotland_covid %>%
+    filter(local_authority %in% input$local_auth) %>% 
     leaflet() %>%
     addProviderTiles(
       providers$CartoDB.Positron

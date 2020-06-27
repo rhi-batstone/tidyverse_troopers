@@ -3,11 +3,10 @@ ui <- fluidPage(
 
   navbarPage(
 
-    # Page title
-    # Displayed to the left of the navigation bar
+
     title = div(
       img(
-        src = "covid19_scot_map/images/scotland_hex.svg",
+        src = "covid19_scot_map/images/sta.png",
         height = "40px"
       ),
       style = "position: relative; top: -10px"
@@ -64,7 +63,7 @@ ui <- fluidPage(
       title = "Scotland",
 
       # App title
-      titlePanel("Covid-19 related Deaths"),
+      titlePanel("Wider Scotland"),
 
 
       # Sidebar with a slider input for date and selector for data
@@ -78,7 +77,12 @@ ui <- fluidPage(
         
         
         mainPanel(
-          leafletOutput("scot_covid_plot", width = 900, height = 600)
+          tabsetPanel(type = "tabs",
+                      tabPanel("Deaths", leafletOutput("scot_covid_plot", width = 400, height = 600),
+                               tags$a(href="https://statistics.gov.scot/data/coronavirus-covid-19-management-information", "Data Source")),
+                      tabPanel("Adult Care Homes"),
+                      tabPanel("Testing")
+          )
         )
       )
     )
