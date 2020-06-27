@@ -8,62 +8,33 @@ library(rmapshaper)
 ##                         read & clean data                     --
 ## ----------------------------------------------------------------
 
-covid <- read_csv("covid19_scot_map/intermediate_zones/covid.csv") %>%
+covid <- read_csv("dev/intermediate_zones/covid.csv") %>%
   clean_names()
 
-scotland_interm <- st_read("covid19_scot_map/intermediate_zones/SG_IntermediateZoneCent_2011/SG_IntermediateZone_Cent_2011.cpg") %>%
-  st_transform("+proj=longlat +datum=WGS84") %>% 
-  left_join(covid, by = c("Name" = "name_of_intermediate_zone")) %>% 
-  str_split(geometry, ", ") 
 
+scotland_interm <- st_read("dev/intermediate_zones/SG_IntermediateZoneCent_2011/SG_IntermediateZone_Cent_2011.shp") %>% 
+  st_transform("+proj=longlat +datum=WGS84")
 
-# ggplot(data = scotland_interm, aes(fill = number_of_deaths)) + 
-#   geom_sf() +
-#   theme_classic()
-## ----------------------------------------------------------------
-##                         Define Bins & pal                     --
-## ----------------------------------------------------------------
-
-
-bins <- seq(0, max(scotland_interm$number_of_deaths), length.out = 6)
-pal <- colorBin("plasma", domain = scotland_interm$number_of_deaths)
-
-labels <- sprintf(
-  "<strong>%s</strong><br/>%g",
-  scotland_interm$Name, 
-  scotland_interm$number_of_deaths
-) %>% lapply(htmltools::HTML)
-
-
-
+scotland_covid <- scotland_interm %>%
+  as_tibble() %>% 
+  mutate(geometry = as.character(geometry),
+         geometry = str_sub(geometry, 3, -2)) %>% 
+  separate(col = geometry, c("long", "lat"), sep = ", ") %>% 
+  mutate(lat = as.double(lat),
+         long = as.double(long)) %>% 
+  left_join(covid, by = c("Name" = "name_of_intermediate_zone"))
+  
 
 ## ----------------------------------------------------------------
 ##                         Leaflet Plot                          --
 ## ----------------------------------------------------------------
 
 
-scotland_interm %>%
+scotland_covid %>%
   leaflet() %>%
-  addProviderTiles("MapBox", options = providerTileOptions(
-    id = "mapbox.light",
-    accessToken = Sys.getenv('MAPBOX_ACCESS_TOKEN'))) %>%
-  addCircles(
+  addTiles() %>% 
+  addCircles(lng = ~long,
+             lat = ~lat,
+             radius = ~number_of_deaths)
     
-    ),
-    label = labels,
-    labelOptions = labelOptions(
-      style = list(
-        "font-weight" = "normal",
-        padding = "3px 8px"
-      ),
-      textsize = "15px",
-      direction = "auto"
-    )
-  ) %>%
-  addLegend(
-    pal = pal, 
-    values = ~number_of_deaths, 
-    opacity = 0.7, 
-    title = "Count",
-    position = "topleft"
-  )
+   
