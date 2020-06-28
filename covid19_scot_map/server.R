@@ -121,6 +121,7 @@ server <- function(input, output, session) {
                      stroke = F,
                      radius = ~population_2018_based/1000,
                      color = ~pal(number_of_deaths),
+                     popup = ~Name
     )
   })
   
@@ -131,12 +132,17 @@ server <- function(input, output, session) {
   output$prescriptions <- renderPlot({
     
   cardio_prescriptions %>% 
-    filter(area_name %in% input$local_authorities) %>% 
+    filter(area_name %in% input$local_auth) %>% 
     group_by(week_ending) %>%
     mutate(avg = mean(variation)) %>% 
-    ggplot(aes(x = week_ending)) +
-    geom_line(aes(y = avg)) +
-    theme_classic()
+    ggplot(aes(x = week_ending, y = avg)) +
+    geom_line() +
+    theme_classic() +
+    labs(
+        x = "Date",
+        y = "Prescription Count",
+        title = "Number of Cardiovascular Prescriptions in 2020"
+      )
     
   })
   
@@ -146,5 +152,15 @@ server <- function(input, output, session) {
       selected = if (input$bar) local_authorities
     )
   })
+  
+  output$note <- renderText({
+    
+    if (input$data == "Testing - Cumulative people tested for COVID-19 - Positive") {
+      print("Note: Count is cumulative")
+    } else {
+      " "
+    }
+    
+  }) 
   
 }

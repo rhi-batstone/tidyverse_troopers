@@ -28,11 +28,12 @@ ui <- fluidPage(
         sidebarPanel(
           sliderInput(
             "date",
-            "Date Range:",
+            "Date:",
             min = min(management$date_code),
             max = max(management$date_code),
             value = max(management$date_code)
           ),
+          
           
           selectInput(
             "data",
@@ -43,6 +44,9 @@ ui <- fluidPage(
               "COVID-19 patients in hospital - Suspected",
               "COVID-19 patients in hospital - Confirmed"),
             selected = "Testing - Cumulative people tested for COVID-19 - Positive"),
+          
+          textOutput("note"),
+          br(),
           
           tags$a(href="https://statistics.gov.scot/data/coronavirus-covid-19-management-information", "Data Source")
           
@@ -63,28 +67,37 @@ ui <- fluidPage(
       title = "Scotland",
       
       # App title
-      titlePanel("Wider Scotland"),
+      titlePanel("Scotland Local Authorities"),
       
       
       # Sidebar with a slider input for date and selector for data
       sidebarLayout(
         sidebarPanel(
-          
-          checkboxGroupInput("local_auth", label = h3("Local Authorities"), 
+          h3("Local Authorities"),
+          checkboxInput("bar", "All/None", value = T),
+          checkboxGroupInput("local_auth", label = "Selector", 
                              choices = local_authorities,
                              selected = local_authorities
-                             ),
-          checkboxInput("bar", "All/None", value = T)
+                             )
+          
           ),
         
         
         
         mainPanel(
           tabsetPanel(type = "tabs",
-                      tabPanel("Deaths", leafletOutput("scot_covid_plot", width = 400, height = 600),
+                      tabPanel("Deaths", 
+                               column(6,
+                                      leafletOutput("scot_covid_plot", width = 400, height = 600),
                                tags$a(href="https://statistics.gov.scot/data/coronavirus-covid-19-management-information", "Data Source")),
+                               column(6,
+                               "Note: Some locations are named IZ followed by a number, please refer",
+                               tags$a(href="https://www2.gov.scot/Topics/Statistics/sns/SNSRef/DZresponseplan", "here for more information."))
+                               ),
+                               
                       tabPanel("Cardiovascular Prescriptions", plotOutput("prescriptions"),
                                tags$a(href="https://scotland.shinyapps.io/phs-covid-wider-impact/", "Data Source")),
+                      
                       tabPanel("Testing")
           )
         )

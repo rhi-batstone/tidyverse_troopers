@@ -3,12 +3,14 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-01-05,Aberdeenshire,9237,10934,-15.5
 2020-01-05,Angus,4615,5475.5,-15.7
 2020-01-05,Argyll and Bute,6104,6417,-4.9
+2020-01-05,Clackmannanshire,6930,7955,-12.9
 2020-01-05,Dumfries and Galloway,9546,10414,-8.3
 2020-01-05,Dundee City,6980,7821,-10.8
 2020-01-05,East Ayrshire,7301,8238.5,-11.4
 2020-01-05,East Dunbartonshire,5174,5945.5,-13
 2020-01-05,East Lothian,4351,4836.5,-10
 2020-01-05,East Renfrewshire,4089,4401.5,-7.1
+2020-01-05,City of Edinburgh,16025,17904,-10.5
 2020-01-05,Falkirk,8322,9170,-9.2
 2020-01-05,Fife,17295,18376,-5.9
 2020-01-05,Glasgow City,33353,35192,-5.2
@@ -19,6 +21,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-01-05,Dumfries and Galloway,9546,10414,-8.3
 2020-01-05,Fife,17295,18376,-5.9
 2020-01-05,Highland,16457,18437.5,-10.7
+2020-01-05,Na h-Eileanan Siar,884,858.5,3
 2020-01-05,North Ayrshire,7545,9484.5,-20.4
 2020-01-05,North Lanarkshire,20067,21726.5,-7.6
 2020-01-05,Orkney Islands,730,854,-14.5
@@ -30,16 +33,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-01-05,South Lanarkshire,18636,20201.5,-7.7
 2020-01-05,West Dunbartonshire,5688,6281.5,-9.4
 2020-01-05,West Lothian,7691,9112,-15.6
+2020-01-05,Na h-Eileanan Siar,884,858.5,3
 2020-01-12,Aberdeen City,14570,13968,4.3
 2020-01-12,Aberdeenshire,17872,17207,3.9
 2020-01-12,Angus,8295,9443,-12.2
 2020-01-12,Argyll and Bute,10607,10434.5,1.7
+2020-01-12,Clackmannanshire,12389,12922.5,-4.1
 2020-01-12,Dumfries and Galloway,16858,15666.5,7.6
 2020-01-12,Dundee City,13179,13144,0.3
 2020-01-12,East Ayrshire,13650,12536,8.9
 2020-01-12,East Dunbartonshire,9861,9378.5,5.1
 2020-01-12,East Lothian,7856,7589,3.5
 2020-01-12,East Renfrewshire,7796,7178,8.6
+2020-01-12,City of Edinburgh,30267,28464.5,6.3
 2020-01-12,Falkirk,14775,14440.5,2.3
 2020-01-12,Fife,33216,31328,6
 2020-01-12,Glasgow City,60372,55644.5,8.5
@@ -50,6 +56,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-01-12,Dumfries and Galloway,16858,15666.5,7.6
 2020-01-12,Fife,33216,31328,6
 2020-01-12,Highland,29979,29658,1.1
+2020-01-12,Na h-Eileanan Siar,1758,1651.5,6.4
 2020-01-12,North Ayrshire,14871,14805.5,0.4
 2020-01-12,North Lanarkshire,35621,34830.5,2.3
 2020-01-12,Orkney Islands,1748,1687,3.6
@@ -61,16 +68,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-01-12,South Lanarkshire,33619,32333.5,4
 2020-01-12,West Dunbartonshire,10102,10289,-1.8
 2020-01-12,West Lothian,14184,14655.5,-3.2
+2020-01-12,Na h-Eileanan Siar,1758,1651.5,6.4
 2020-01-19,Aberdeen City,12393,12961,-4.4
 2020-01-19,Aberdeenshire,15443,15732.5,-1.8
 2020-01-19,Angus,7528,8654.5,-13
 2020-01-19,Argyll and Bute,9658,9550,1.1
+2020-01-19,Clackmannanshire,11313,12388,-8.7
 2020-01-19,Dumfries and Galloway,15438,14984.5,3
 2020-01-19,Dundee City,12154,12204,-0.4
 2020-01-19,East Ayrshire,12443,11740.5,6
 2020-01-19,East Dunbartonshire,9332,9189,1.6
 2020-01-19,East Lothian,7511,7581.5,-0.9
 2020-01-19,East Renfrewshire,6993,7191.5,-2.8
+2020-01-19,City of Edinburgh,28702,27316.5,5.1
 2020-01-19,Falkirk,13545,13273,2
 2020-01-19,Fife,29335,29239.5,0.3
 2020-01-19,Glasgow City,54254,52590,3.2
@@ -81,6 +91,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-01-19,Dumfries and Galloway,15438,14984.5,3
 2020-01-19,Fife,29335,29239.5,0.3
 2020-01-19,Highland,27243,28368.5,-4
+2020-01-19,Na h-Eileanan Siar,1329,1391,-4.5
 2020-01-19,North Ayrshire,14183,14294,-0.8
 2020-01-19,North Lanarkshire,32367,31297,3.4
 2020-01-19,Orkney Islands,1448,1576,-8.1
@@ -92,16 +103,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-01-19,South Lanarkshire,31656,30584.5,3.5
 2020-01-19,West Dunbartonshire,8653,9042.5,-4.3
 2020-01-19,West Lothian,14394,13021.5,10.5
+2020-01-19,Na h-Eileanan Siar,1329,1391,-4.5
 2020-01-26,Aberdeen City,12793,12888.5,-0.7
 2020-01-26,Aberdeenshire,15580,16225,-4
 2020-01-26,Angus,7122,8149.5,-12.6
 2020-01-26,Argyll and Bute,9623,9818.5,-2
+2020-01-26,Clackmannanshire,11661,12121,-3.8
 2020-01-26,Dumfries and Galloway,14350,14176.5,1.2
 2020-01-26,Dundee City,11105,11907.5,-6.7
 2020-01-26,East Ayrshire,11904,11940.5,-0.3
 2020-01-26,East Dunbartonshire,9270,9064,2.3
 2020-01-26,East Lothian,7354,7094,3.7
 2020-01-26,East Renfrewshire,6687,6791.5,-1.5
+2020-01-26,City of Edinburgh,26705,27271.5,-2.1
 2020-01-26,Falkirk,13432,13682,-1.8
 2020-01-26,Fife,29013,29453.5,-1.5
 2020-01-26,Glasgow City,50593,51981.5,-2.7
@@ -112,6 +126,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-01-26,Dumfries and Galloway,14350,14176.5,1.2
 2020-01-26,Fife,29013,29453.5,-1.5
 2020-01-26,Highland,26825,27883,-3.8
+2020-01-26,Na h-Eileanan Siar,1521,1488,2.2
 2020-01-26,North Ayrshire,13526,13191,2.5
 2020-01-26,North Lanarkshire,29496,30412,-3
 2020-01-26,Orkney Islands,1603,1509.5,6.2
@@ -123,16 +138,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-01-26,South Lanarkshire,30137,30775,-2.1
 2020-01-26,West Dunbartonshire,8875,9082,-2.3
 2020-01-26,West Lothian,13795,13895,-0.7
+2020-01-26,Na h-Eileanan Siar,1521,1488,2.2
 2020-02-02,Aberdeen City,12768,12916,-1.1
 2020-02-02,Aberdeenshire,15485,16576.5,-6.6
 2020-02-02,Angus,7159,8333,-14.1
 2020-02-02,Argyll and Bute,10256,10062.5,1.9
+2020-02-02,Clackmannanshire,11358,11987,-5.2
 2020-02-02,Dumfries and Galloway,14199,14473.5,-1.9
 2020-02-02,Dundee City,11679,12002.5,-2.7
 2020-02-02,East Ayrshire,13063,12181.5,7.2
 2020-02-02,East Dunbartonshire,9106,9289.5,-2
 2020-02-02,East Lothian,7738,7607,1.7
 2020-02-02,East Renfrewshire,7120,6736,5.7
+2020-02-02,City of Edinburgh,27918,27539.5,1.4
 2020-02-02,Falkirk,13252,13520.5,-2
 2020-02-02,Fife,29388,28161.5,4.4
 2020-02-02,Glasgow City,52262,54288.5,-3.7
@@ -143,6 +161,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-02-02,Dumfries and Galloway,14199,14473.5,-1.9
 2020-02-02,Fife,29388,28161.5,4.4
 2020-02-02,Highland,27219,28367,-4
+2020-02-02,Na h-Eileanan Siar,1482,1523.5,-2.7
 2020-02-02,North Ayrshire,13668,13526.5,1
 2020-02-02,North Lanarkshire,30449,31529,-3.4
 2020-02-02,Orkney Islands,1482,1439.5,3
@@ -154,16 +173,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-02-02,South Lanarkshire,29807,29669,0.5
 2020-02-02,West Dunbartonshire,8991,9177,-2
 2020-02-02,West Lothian,13257,13878.5,-4.5
+2020-02-02,Na h-Eileanan Siar,1482,1523.5,-2.7
 2020-02-09,Aberdeen City,13175,13271.5,-0.7
 2020-02-09,Aberdeenshire,16148,16734,-3.5
 2020-02-09,Angus,7397,9079.5,-18.5
 2020-02-09,Argyll and Bute,9735,10017,-2.8
+2020-02-09,Clackmannanshire,12017,12499.5,-3.9
 2020-02-09,Dumfries and Galloway,14958,15134.5,-1.2
 2020-02-09,Dundee City,11782,13291.5,-11.4
 2020-02-09,East Ayrshire,12609,12118,4.1
 2020-02-09,East Dunbartonshire,9345,9124,2.4
 2020-02-09,East Lothian,7212,7343.5,-1.8
 2020-02-09,East Renfrewshire,7145,7172,-0.4
+2020-02-09,City of Edinburgh,27114,26573,2
 2020-02-09,Falkirk,14088,13952.5,1
 2020-02-09,Fife,30020,29357.5,2.3
 2020-02-09,Glasgow City,56116,53812,4.3
@@ -174,6 +196,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-02-09,Dumfries and Galloway,14958,15134.5,-1.2
 2020-02-09,Fife,30020,29357.5,2.3
 2020-02-09,Highland,27750,28707.5,-3.3
+2020-02-09,Na h-Eileanan Siar,1456,1544,-5.7
 2020-02-09,North Ayrshire,13119,14392,-8.8
 2020-02-09,North Lanarkshire,33492,33220,0.8
 2020-02-09,Orkney Islands,1623,1622,0.1
@@ -185,16 +208,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-02-09,South Lanarkshire,31618,31136,1.5
 2020-02-09,West Dunbartonshire,9452,9875.5,-4.3
 2020-02-09,West Lothian,13025,12626.5,3.2
+2020-02-09,Na h-Eileanan Siar,1456,1544,-5.7
 2020-02-16,Aberdeen City,12629,12307.5,2.6
 2020-02-16,Aberdeenshire,15452,15321,0.9
 2020-02-16,Angus,7485,8450,-11.4
 2020-02-16,Argyll and Bute,9359,9373,-0.1
+2020-02-16,Clackmannanshire,11688,11847,-1.3
 2020-02-16,Dumfries and Galloway,14953,14784.5,1.1
 2020-02-16,Dundee City,12026,12062.5,-0.3
 2020-02-16,East Ayrshire,12559,11380.5,10.4
 2020-02-16,East Dunbartonshire,9253,8882,4.2
 2020-02-16,East Lothian,6955,6933.5,0.3
 2020-02-16,East Renfrewshire,6895,6892,0
+2020-02-16,City of Edinburgh,27141,25648.5,5.8
 2020-02-16,Falkirk,13472,13141.5,2.5
 2020-02-16,Fife,29343,28240,3.9
 2020-02-16,Glasgow City,52158,51901.5,0.5
@@ -205,6 +231,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-02-16,Dumfries and Galloway,14953,14784.5,1.1
 2020-02-16,Fife,29343,28240,3.9
 2020-02-16,Highland,26933,27300.5,-1.3
+2020-02-16,Na h-Eileanan Siar,1453,1504.5,-3.4
 2020-02-16,North Ayrshire,14011,13967.5,0.3
 2020-02-16,North Lanarkshire,30804,31956.5,-3.6
 2020-02-16,Orkney Islands,1509,1468.5,2.8
@@ -216,16 +243,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-02-16,South Lanarkshire,31065,30840,0.7
 2020-02-16,West Dunbartonshire,9454,9225,2.5
 2020-02-16,West Lothian,13739,12649.5,8.6
+2020-02-16,Na h-Eileanan Siar,1453,1504.5,-3.4
 2020-02-23,Aberdeen City,12328,12685,-2.8
 2020-02-23,Aberdeenshire,14992,15912,-5.8
 2020-02-23,Angus,7052,8120.5,-13.2
 2020-02-23,Argyll and Bute,9526,9582,-0.6
+2020-02-23,Clackmannanshire,10803,11397,-5.2
 2020-02-23,Dumfries and Galloway,14332,14082,1.8
 2020-02-23,Dundee City,11051,11476,-3.7
 2020-02-23,East Ayrshire,11823,11729.5,0.8
 2020-02-23,East Dunbartonshire,8825,8845,-0.2
 2020-02-23,East Lothian,7057,6885.5,2.5
 2020-02-23,East Renfrewshire,6310,6336,-0.4
+2020-02-23,City of Edinburgh,25998,25846,0.6
 2020-02-23,Falkirk,12024,13149.5,-8.6
 2020-02-23,Fife,27790,28619.5,-2.9
 2020-02-23,Glasgow City,50469,50193.5,0.5
@@ -236,6 +266,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-02-23,Dumfries and Galloway,14332,14082,1.8
 2020-02-23,Fife,27790,28619.5,-2.9
 2020-02-23,Highland,26154,27191,-3.8
+2020-02-23,Na h-Eileanan Siar,1479,1452,1.9
 2020-02-23,North Ayrshire,13022,12855.5,1.3
 2020-02-23,North Lanarkshire,30039,30075,-0.1
 2020-02-23,Orkney Islands,1460,1474,-0.9
@@ -247,16 +278,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-02-23,South Lanarkshire,29340,29684.5,-1.2
 2020-02-23,West Dunbartonshire,8594,8930.5,-3.8
 2020-02-23,West Lothian,13208,12983,1.7
+2020-02-23,Na h-Eileanan Siar,1479,1452,1.9
 2020-03-01,Aberdeen City,12269,12335,-0.5
 2020-03-01,Aberdeenshire,15685,15563.5,0.8
 2020-03-01,Angus,6785,7658,-11.4
 2020-03-01,Argyll and Bute,9735,9707.5,0.3
+2020-03-01,Clackmannanshire,11766,10957,7.4
 2020-03-01,Dumfries and Galloway,14524,14511.5,0.1
 2020-03-01,Dundee City,11215,11782,-4.8
 2020-03-01,East Ayrshire,12243,11658.5,5
 2020-03-01,East Dunbartonshire,9111,7564,20.5
 2020-03-01,East Lothian,7544,6525,15.6
 2020-03-01,East Renfrewshire,6843,5944.5,15.1
+2020-03-01,City of Edinburgh,26116,23773,9.9
 2020-03-01,Falkirk,13237,11529.5,14.8
 2020-03-01,Fife,28838,25878.5,11.4
 2020-03-01,Glasgow City,52757,49046,7.6
@@ -267,6 +301,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-01,Dumfries and Galloway,14524,14511.5,0.1
 2020-03-01,Fife,28838,25878.5,11.4
 2020-03-01,Highland,26258,27396.5,-4.2
+2020-03-01,Na h-Eileanan Siar,1584,1498.5,5.7
 2020-03-01,North Ayrshire,13164,13000.5,1.3
 2020-03-01,North Lanarkshire,30559,28087.5,8.8
 2020-03-01,Orkney Islands,1399,1374,1.8
@@ -278,16 +313,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-01,South Lanarkshire,29494,28148,4.8
 2020-03-01,West Dunbartonshire,8362,8004,4.5
 2020-03-01,West Lothian,13848,11691,18.5
+2020-03-01,Na h-Eileanan Siar,1584,1498.5,5.7
 2020-03-08,Aberdeen City,13240,13425.5,-1.4
 2020-03-08,Aberdeenshire,16180,16796.5,-3.7
 2020-03-08,Angus,7458,9169,-18.7
 2020-03-08,Argyll and Bute,9884,10204,-3.1
+2020-03-08,Clackmannanshire,12049,13032.5,-7.5
 2020-03-08,Dumfries and Galloway,16213,15258.5,6.3
 2020-03-08,Dundee City,12144,12685,-4.3
 2020-03-08,East Ayrshire,12515,12451.5,0.5
 2020-03-08,East Dunbartonshire,9472,9666.5,-2
 2020-03-08,East Lothian,7444,7618.5,-2.3
 2020-03-08,East Renfrewshire,7177,7238.5,-0.8
+2020-03-08,City of Edinburgh,29660,28214,5.1
 2020-03-08,Falkirk,13766,15101,-8.8
 2020-03-08,Fife,31212,31847.5,-2
 2020-03-08,Glasgow City,56476,55956,0.9
@@ -298,6 +336,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-08,Dumfries and Galloway,16213,15258.5,6.3
 2020-03-08,Fife,31212,31847.5,-2
 2020-03-08,Highland,28004,28606.5,-2.1
+2020-03-08,Na h-Eileanan Siar,1464,1486,-1.5
 2020-03-08,North Ayrshire,13768,13727.5,0.3
 2020-03-08,North Lanarkshire,33906,34317.5,-1.2
 2020-03-08,Orkney Islands,1601,1625.5,-1.5
@@ -309,16 +348,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-08,South Lanarkshire,31719,32320,-1.9
 2020-03-08,West Dunbartonshire,10650,10139.5,5
 2020-03-08,West Lothian,13685,13881,-1.4
+2020-03-08,Na h-Eileanan Siar,1464,1486,-1.5
 2020-03-15,Aberdeen City,13698,12370,10.7
 2020-03-15,Aberdeenshire,16678,15659.5,6.5
 2020-03-15,Angus,7758,8353.5,-7.1
 2020-03-15,Argyll and Bute,11695,9645,21.3
+2020-03-15,Clackmannanshire,12702,11936,6.4
 2020-03-15,Dumfries and Galloway,15782,14506,8.8
 2020-03-15,Dundee City,12271,12436.5,-1.3
 2020-03-15,East Ayrshire,12543,11564,8.5
 2020-03-15,East Dunbartonshire,10596,9285.5,14.1
 2020-03-15,East Lothian,7945,7600.5,4.5
 2020-03-15,East Renfrewshire,7776,7008,11
+2020-03-15,City of Edinburgh,30960,27678.5,11.9
 2020-03-15,Falkirk,14978,13500.5,10.9
 2020-03-15,Fife,30811,29766,3.5
 2020-03-15,Glasgow City,56873,53022,7.3
@@ -329,6 +371,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-15,Dumfries and Galloway,15782,14506,8.8
 2020-03-15,Fife,30811,29766,3.5
 2020-03-15,Highland,30747,28293.5,8.7
+2020-03-15,Na h-Eileanan Siar,1500,1561,-3.9
 2020-03-15,North Ayrshire,15005,13421,11.8
 2020-03-15,North Lanarkshire,34284,31580,8.6
 2020-03-15,Orkney Islands,1661,1582.5,5
@@ -340,16 +383,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-15,South Lanarkshire,34105,30696,11.1
 2020-03-15,West Dunbartonshire,9968,9429.5,5.7
 2020-03-15,West Lothian,14773,13602.5,8.6
+2020-03-15,Na h-Eileanan Siar,1500,1561,-3.9
 2020-03-22,Aberdeen City,17662,13299,32.8
 2020-03-22,Aberdeenshire,21154,16908,25.1
 2020-03-22,Angus,9855,8572,15
 2020-03-22,Argyll and Bute,13514,9919,36.2
+2020-03-22,Clackmannanshire,16713,12284,36.1
 2020-03-22,Dumfries and Galloway,21922,14911,47
 2020-03-22,Dundee City,16187,12063.5,34.2
 2020-03-22,East Ayrshire,15892,12241.5,29.8
 2020-03-22,East Dunbartonshire,13212,9542,38.5
 2020-03-22,East Lothian,9695,7812.5,24.1
 2020-03-22,East Renfrewshire,9627,7016,37.2
+2020-03-22,City of Edinburgh,39857,27559.5,44.6
 2020-03-22,Falkirk,18444,13857.5,33.1
 2020-03-22,Fife,43686,28910,51.1
 2020-03-22,Glasgow City,67351,53673.5,25.5
@@ -360,6 +406,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-22,Dumfries and Galloway,21922,14911,47
 2020-03-22,Fife,43686,28910,51.1
 2020-03-22,Highland,37815,28516,32.6
+2020-03-22,Na h-Eileanan Siar,2159,1471.5,46.7
 2020-03-22,North Ayrshire,19611,14060.5,39.5
 2020-03-22,North Lanarkshire,42676,31997,33.4
 2020-03-22,Orkney Islands,2500,1498.5,66.8
@@ -371,16 +418,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-22,South Lanarkshire,41441,31017,33.6
 2020-03-22,West Dunbartonshire,11687,9303.5,25.6
 2020-03-22,West Lothian,18984,13819.5,37.4
+2020-03-22,Na h-Eileanan Siar,2159,1471.5,46.7
 2020-03-29,Aberdeen City,14123,13227.5,6.8
 2020-03-29,Aberdeenshire,18611,16237.5,14.6
 2020-03-29,Angus,8265,8407.5,-1.7
 2020-03-29,Argyll and Bute,10914,9651.5,13.1
+2020-03-29,Clackmannanshire,12772,11410.5,11.9
 2020-03-29,Dumfries and Galloway,16999,14539,16.9
 2020-03-29,Dundee City,12948,12871,0.6
 2020-03-29,East Ayrshire,13759,11292,21.8
 2020-03-29,East Dunbartonshire,10045,8466.5,18.6
 2020-03-29,East Lothian,8560,7082.5,20.9
 2020-03-29,East Renfrewshire,7752,6238.5,24.3
+2020-03-29,City of Edinburgh,31107,25044,24.2
 2020-03-29,Falkirk,15663,12938.5,21.1
 2020-03-29,Fife,35495,28457,24.7
 2020-03-29,Glasgow City,58495,51301.5,14
@@ -391,6 +441,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-29,Dumfries and Galloway,16999,14539,16.9
 2020-03-29,Fife,35495,28457,24.7
 2020-03-29,Highland,31298,27115,15.4
+2020-03-29,Na h-Eileanan Siar,2036,1318.5,54.4
 2020-03-29,North Ayrshire,15053,13051.5,15.3
 2020-03-29,North Lanarkshire,33983,29984.5,13.3
 2020-03-29,Orkney Islands,1724,1475.5,16.8
@@ -402,16 +453,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-03-29,South Lanarkshire,34121,29527,15.6
 2020-03-29,West Dunbartonshire,9320,8634.5,7.9
 2020-03-29,West Lothian,16208,13221.5,22.6
+2020-03-29,Na h-Eileanan Siar,2036,1318.5,54.4
 2020-04-05,Aberdeen City,12041,12464,-3.4
 2020-04-05,Aberdeenshire,13760,15874.5,-13.3
 2020-04-05,Angus,6421,8471,-24.2
 2020-04-05,Argyll and Bute,9113,9842,-7.4
+2020-04-05,Clackmannanshire,9705,12193,-20.4
 2020-04-05,Dumfries and Galloway,13181,14432.5,-8.7
 2020-04-05,Dundee City,10798,11882,-9.1
 2020-04-05,East Ayrshire,12408,12043,3
 2020-04-05,East Dunbartonshire,8036,9199.5,-12.6
 2020-04-05,East Lothian,6914,7032.5,-1.7
 2020-04-05,East Renfrewshire,5925,7369.5,-19.6
+2020-04-05,City of Edinburgh,24778,27676,-10.5
 2020-04-05,Falkirk,12046,13508.5,-10.8
 2020-04-05,Fife,27945,29462,-5.1
 2020-04-05,Glasgow City,48946,52951.5,-7.6
@@ -422,6 +476,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-04-05,Dumfries and Galloway,13181,14432.5,-8.7
 2020-04-05,Fife,27945,29462,-5.1
 2020-04-05,Highland,25563,28266.5,-9.6
+2020-04-05,Na h-Eileanan Siar,1265,1588.5,-20.4
 2020-04-05,North Ayrshire,11932,13677.5,-12.8
 2020-04-05,North Lanarkshire,30827,32385,-4.8
 2020-04-05,Orkney Islands,1416,1450,-2.3
@@ -433,16 +488,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-04-05,South Lanarkshire,29403,30299,-3
 2020-04-05,West Dunbartonshire,8335,9704.5,-14.1
 2020-04-05,West Lothian,12578,12819,-1.9
+2020-04-05,Na h-Eileanan Siar,1265,1588.5,-20.4
 2020-04-12,Aberdeen City,10806,12842.5,-15.9
 2020-04-12,Aberdeenshire,13884,15638.5,-11.2
 2020-04-12,Angus,6541,8083,-19.1
 2020-04-12,Argyll and Bute,9656,9653.5,0
+2020-04-12,Clackmannanshire,10904,12156,-10.3
 2020-04-12,Dumfries and Galloway,13031,14921,-12.7
 2020-04-12,Dundee City,10522,11929,-11.8
 2020-04-12,East Ayrshire,11157,12226.5,-8.7
 2020-04-12,East Dunbartonshire,8373,9033,-7.3
 2020-04-12,East Lothian,6525,7443.5,-12.3
 2020-04-12,East Renfrewshire,6708,6668.5,0.6
+2020-04-12,City of Edinburgh,23271,27810.5,-16.3
 2020-04-12,Falkirk,11905,13922,-14.5
 2020-04-12,Fife,25001,29333.5,-14.8
 2020-04-12,Glasgow City,49167,51725.5,-4.9
@@ -453,6 +511,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-04-12,Dumfries and Galloway,13031,14921,-12.7
 2020-04-12,Fife,25001,29333.5,-14.8
 2020-04-12,Highland,25108,27955,-10.2
+2020-04-12,Na h-Eileanan Siar,1288,1404,-8.3
 2020-04-12,North Ayrshire,12103,14397.5,-15.9
 2020-04-12,North Lanarkshire,30200,31693,-4.7
 2020-04-12,Orkney Islands,1280,1603,-20.1
@@ -464,16 +523,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-04-12,South Lanarkshire,28758,31330,-8.2
 2020-04-12,West Dunbartonshire,9059,9522.5,-4.9
 2020-04-12,West Lothian,12067,13939.5,-13.4
+2020-04-12,Na h-Eileanan Siar,1288,1404,-8.3
 2020-04-19,Aberdeen City,10730,13014,-17.6
 2020-04-19,Aberdeenshire,13993,15719.5,-11
 2020-04-19,Angus,5514,8230.5,-33
 2020-04-19,Argyll and Bute,8161,9236,-11.6
+2020-04-19,Clackmannanshire,10243,11453,-10.6
 2020-04-19,Dumfries and Galloway,12870,14288,-9.9
 2020-04-19,Dundee City,9834,12115.5,-18.8
 2020-04-19,East Ayrshire,10982,11488.5,-4.4
 2020-04-19,East Dunbartonshire,7802,8491.5,-8.1
 2020-04-19,East Lothian,6210,6620.5,-6.2
 2020-04-19,East Renfrewshire,5309,6195,-14.3
+2020-04-19,City of Edinburgh,23281,24380,-4.5
 2020-04-19,Falkirk,10847,12760.5,-15
 2020-04-19,Fife,23555,27748,-15.1
 2020-04-19,Glasgow City,47250,49609.5,-4.8
@@ -484,6 +546,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-04-19,Dumfries and Galloway,12870,14288,-9.9
 2020-04-19,Fife,23555,27748,-15.1
 2020-04-19,Highland,22977,26105.5,-12
+2020-04-19,Na h-Eileanan Siar,1395,1367,2
 2020-04-19,North Ayrshire,11053,12638,-12.5
 2020-04-19,North Lanarkshire,27593,29135.5,-5.3
 2020-04-19,Orkney Islands,1223,1544.5,-20.8
@@ -495,16 +558,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-04-19,South Lanarkshire,26854,29044,-7.5
 2020-04-19,West Dunbartonshire,7269,8332,-12.8
 2020-04-19,West Lothian,12069,11879,1.6
+2020-04-19,Na h-Eileanan Siar,1395,1367,2
 2020-04-26,Aberdeen City,11306,12793,-11.6
 2020-04-26,Aberdeenshire,14139,16224.5,-12.9
 2020-04-26,Angus,6797,8202.5,-17.1
 2020-04-26,Argyll and Bute,9200,9652,-4.7
+2020-04-26,Clackmannanshire,10042,12184.5,-17.6
 2020-04-26,Dumfries and Galloway,13996,14281,-2
 2020-04-26,Dundee City,10802,11700.5,-7.7
 2020-04-26,East Ayrshire,11872,11700,1.5
 2020-04-26,East Dunbartonshire,8212,9001.5,-8.8
 2020-04-26,East Lothian,6757,7493,-9.8
 2020-04-26,East Renfrewshire,6537,6578,-0.6
+2020-04-26,City of Edinburgh,23421,26229.5,-10.7
 2020-04-26,Falkirk,12789,13296.5,-3.8
 2020-04-26,Fife,26961,28594.5,-5.7
 2020-04-26,Glasgow City,48741,53585.5,-9
@@ -515,6 +581,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-04-26,Dumfries and Galloway,13996,14281,-2
 2020-04-26,Fife,26961,28594.5,-5.7
 2020-04-26,Highland,24017,27868.5,-13.8
+2020-04-26,Na h-Eileanan Siar,1439,1628.5,-11.6
 2020-04-26,North Ayrshire,12562,13246.5,-5.2
 2020-04-26,North Lanarkshire,29507,31598,-6.6
 2020-04-26,Orkney Islands,1291,1413.5,-8.7
@@ -526,16 +593,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-04-26,South Lanarkshire,28822,30088.5,-4.2
 2020-04-26,West Dunbartonshire,8144,8721.5,-6.6
 2020-04-26,West Lothian,12184,13371,-8.9
+2020-04-26,Na h-Eileanan Siar,1439,1628.5,-11.6
 2020-05-03,Aberdeen City,11866,13286.5,-10.7
 2020-05-03,Aberdeenshire,14174,16397,-13.6
 2020-05-03,Angus,6619,8902.5,-25.7
 2020-05-03,Argyll and Bute,8926,10217,-12.6
+2020-05-03,Clackmannanshire,11267,13302.5,-15.3
 2020-05-03,Dumfries and Galloway,14386,15394,-6.5
 2020-05-03,Dundee City,10626,12521.5,-15.1
 2020-05-03,East Ayrshire,11806,12922.5,-8.6
 2020-05-03,East Dunbartonshire,8536,9335,-8.6
 2020-05-03,East Lothian,7292,7511.5,-2.9
 2020-05-03,East Renfrewshire,6284,7516.5,-16.4
+2020-05-03,City of Edinburgh,26334,28817.5,-8.6
 2020-05-03,Falkirk,12891,14605,-11.7
 2020-05-03,Fife,26667,30982,-13.9
 2020-05-03,Glasgow City,53291,57560.5,-7.4
@@ -546,6 +616,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-03,Dumfries and Galloway,14386,15394,-6.5
 2020-05-03,Fife,26667,30982,-13.9
 2020-05-03,Highland,24214,29006.5,-16.5
+2020-05-03,Na h-Eileanan Siar,1388,1614.5,-14
 2020-05-03,North Ayrshire,12283,14288.5,-14
 2020-05-03,North Lanarkshire,30796,33936,-9.3
 2020-05-03,Orkney Islands,1546,1613,-4.2
@@ -557,16 +628,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-03,South Lanarkshire,28915,32215.5,-10.2
 2020-05-03,West Dunbartonshire,8617,9881.5,-12.8
 2020-05-03,West Lothian,12702,13425,-5.4
+2020-05-03,Na h-Eileanan Siar,1388,1614.5,-14
 2020-05-10,Aberdeen City,10321,11964,-13.7
 2020-05-10,Aberdeenshire,14495,15306.5,-5.3
 2020-05-10,Angus,6644,8017.5,-17.1
 2020-05-10,Argyll and Bute,8339,9451,-11.8
+2020-05-10,Clackmannanshire,10765,10929.5,-1.5
 2020-05-10,Dumfries and Galloway,13463,14214,-5.3
 2020-05-10,Dundee City,10803,11294,-4.3
 2020-05-10,East Ayrshire,11419,11044.5,3.4
 2020-05-10,East Dunbartonshire,8163,8236.5,-0.9
 2020-05-10,East Lothian,6939,7116.5,-2.5
 2020-05-10,East Renfrewshire,6961,6167.5,12.9
+2020-05-10,City of Edinburgh,25704,25786,-0.3
 2020-05-10,Falkirk,12187,12505,-2.5
 2020-05-10,Fife,26589,27256,-2.4
 2020-05-10,Glasgow City,48103,47914.5,0.4
@@ -577,6 +651,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-10,Dumfries and Galloway,13463,14214,-5.3
 2020-05-10,Fife,26589,27256,-2.4
 2020-05-10,Highland,24215,27325,-11.4
+2020-05-10,Na h-Eileanan Siar,1416,1468,-3.5
 2020-05-10,North Ayrshire,12688,13552.5,-6.4
 2020-05-10,North Lanarkshire,29491,29623,-0.4
 2020-05-10,Orkney Islands,1438,1435.5,0.2
@@ -588,16 +663,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-10,South Lanarkshire,28797,29432,-2.2
 2020-05-10,West Dunbartonshire,8749,8719,0.3
 2020-05-10,West Lothian,12289,12601.5,-2.5
+2020-05-10,Na h-Eileanan Siar,1416,1468,-3.5
 2020-05-17,Aberdeen City,11653,13110,-11.1
 2020-05-17,Aberdeenshire,15215,16708,-8.9
 2020-05-17,Angus,6605,7966,-17.1
 2020-05-17,Argyll and Bute,9544,9651.5,-1.1
+2020-05-17,Clackmannanshire,11260,12082,-6.8
 2020-05-17,Dumfries and Galloway,14273,14504,-1.6
 2020-05-17,Dundee City,11302,12520.5,-9.7
 2020-05-17,East Ayrshire,12536,12143.5,3.2
 2020-05-17,East Dunbartonshire,8955,9262,-3.3
 2020-05-17,East Lothian,6920,7421,-6.8
 2020-05-17,East Renfrewshire,6515,6932.5,-6
+2020-05-17,City of Edinburgh,26761,27104.5,-1.3
 2020-05-17,Falkirk,12956,13643,-5
 2020-05-17,Fife,27435,29738,-7.7
 2020-05-17,Glasgow City,53098,52169,1.8
@@ -608,6 +686,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-17,Dumfries and Galloway,14273,14504,-1.6
 2020-05-17,Fife,27435,29738,-7.7
 2020-05-17,Highland,26602,27799,-4.3
+2020-05-17,Na h-Eileanan Siar,1318,1418,-7.1
 2020-05-17,North Ayrshire,13082,13812.5,-5.3
 2020-05-17,North Lanarkshire,31822,30787.5,3.4
 2020-05-17,Orkney Islands,1436,1530,-6.1
@@ -619,16 +698,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-17,South Lanarkshire,31738,31312.5,1.4
 2020-05-17,West Dunbartonshire,8623,8850.5,-2.6
 2020-05-17,West Lothian,14118,13262.5,6.5
+2020-05-17,Na h-Eileanan Siar,1318,1418,-7.1
 2020-05-24,Aberdeen City,11386,13228,-13.9
 2020-05-24,Aberdeenshire,15252,16087.5,-5.2
 2020-05-24,Angus,6757,8652,-21.9
 2020-05-24,Argyll and Bute,9862,10109.5,-2.4
+2020-05-24,Clackmannanshire,11305,11978,-5.6
 2020-05-24,Dumfries and Galloway,14524,14528.5,-0
 2020-05-24,Dundee City,11301,12478,-9.4
 2020-05-24,East Ayrshire,12531,12439,0.7
 2020-05-24,East Dunbartonshire,9433,9974.5,-5.4
 2020-05-24,East Lothian,7396,7504.5,-1.4
 2020-05-24,East Renfrewshire,7195,6997,2.8
+2020-05-24,City of Edinburgh,25909,27494,-5.8
 2020-05-24,Falkirk,13532,13591,-0.4
 2020-05-24,Fife,29212,30375.5,-3.8
 2020-05-24,Glasgow City,52776,57176,-7.7
@@ -639,6 +721,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-24,Dumfries and Galloway,14524,14528.5,-0
 2020-05-24,Fife,29212,30375.5,-3.8
 2020-05-24,Highland,26206,28042,-6.5
+2020-05-24,Na h-Eileanan Siar,1353,1490.5,-9.2
 2020-05-24,North Ayrshire,13336,14165.5,-5.9
 2020-05-24,North Lanarkshire,31524,33213.5,-5.1
 2020-05-24,Orkney Islands,1382,1520,-9.1
@@ -650,16 +733,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-24,South Lanarkshire,30345,31414,-3.4
 2020-05-24,West Dunbartonshire,8948,9901,-9.6
 2020-05-24,West Lothian,12924,14272,-9.4
+2020-05-24,Na h-Eileanan Siar,1353,1490.5,-9.2
 2020-05-31,Aberdeen City,11115,12985.5,-14.4
 2020-05-31,Aberdeenshire,14202,16005.5,-11.3
 2020-05-31,Angus,6589,8002.5,-17.7
 2020-05-31,Argyll and Bute,8885,9359.5,-5.1
+2020-05-31,Clackmannanshire,10460,12295,-14.9
 2020-05-31,Dumfries and Galloway,14259,14927,-4.5
 2020-05-31,Dundee City,10947,11426,-4.2
 2020-05-31,East Ayrshire,11368,11502,-1.2
 2020-05-31,East Dunbartonshire,8208,7934.5,3.4
 2020-05-31,East Lothian,6642,7059,-5.9
 2020-05-31,East Renfrewshire,6199,6643.5,-6.7
+2020-05-31,City of Edinburgh,25069,26489.5,-5.4
 2020-05-31,Falkirk,12541,13231.5,-5.2
 2020-05-31,Fife,26671,29147.5,-8.5
 2020-05-31,Glasgow City,48174,49177.5,-2
@@ -670,6 +756,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-31,Dumfries and Galloway,14259,14927,-4.5
 2020-05-31,Fife,26671,29147.5,-8.5
 2020-05-31,Highland,24877,27232,-8.6
+2020-05-31,Na h-Eileanan Siar,1304,1210.5,7.7
 2020-05-31,North Ayrshire,11756,12687.5,-7.3
 2020-05-31,North Lanarkshire,31376,29875.5,5
 2020-05-31,Orkney Islands,1509,1569.5,-3.9
@@ -681,16 +768,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-05-31,South Lanarkshire,28156,28058,0.3
 2020-05-31,West Dunbartonshire,8112,8574,-5.4
 2020-05-31,West Lothian,12973,13109,-1
+2020-05-31,Na h-Eileanan Siar,1304,1210.5,7.7
 2020-06-07,Aberdeen City,11152,13098,-14.9
 2020-06-07,Aberdeenshire,14408,15489.5,-7
 2020-06-07,Angus,6769,8405,-19.5
 2020-06-07,Argyll and Bute,8771,9929.5,-11.7
+2020-06-07,Clackmannanshire,11519,12172,-5.4
 2020-06-07,Dumfries and Galloway,13739,14655,-6.3
 2020-06-07,Dundee City,11052,12487.5,-11.5
 2020-06-07,East Ayrshire,11725,11886,-1.4
 2020-06-07,East Dunbartonshire,8387,9449,-11.2
 2020-06-07,East Lothian,6966,7626,-8.7
 2020-06-07,East Renfrewshire,6585,7305.5,-9.9
+2020-06-07,City of Edinburgh,26470,27135,-2.5
 2020-06-07,Falkirk,13102,14237.5,-8
 2020-06-07,Fife,27262,28868.5,-5.6
 2020-06-07,Glasgow City,50047,52778.5,-5.2
@@ -701,6 +791,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-06-07,Dumfries and Galloway,13739,14655,-6.3
 2020-06-07,Fife,27262,28868.5,-5.6
 2020-06-07,Highland,24654,27970,-11.9
+2020-06-07,Na h-Eileanan Siar,1174,1469.5,-20.1
 2020-06-07,North Ayrshire,13501,14572,-7.3
 2020-06-07,North Lanarkshire,30309,32054.5,-5.4
 2020-06-07,Orkney Islands,1363,1701.5,-19.9
@@ -712,16 +803,19 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-06-07,South Lanarkshire,29847,30848.5,-3.2
 2020-06-07,West Dunbartonshire,8705,9757.5,-10.8
 2020-06-07,West Lothian,13000,13068,-0.5
+2020-06-07,Na h-Eileanan Siar,1174,1469.5,-20.1
 2020-06-14,Aberdeen City,11425,12680,-9.9
 2020-06-14,Aberdeenshire,14590,15893.5,-8.2
 2020-06-14,Angus,6581,8217,-19.9
 2020-06-14,Argyll and Bute,9119,9855.5,-7.5
+2020-06-14,Clackmannanshire,10631,11043.5,-3.7
 2020-06-14,Dumfries and Galloway,13969,14643.5,-4.6
 2020-06-14,Dundee City,10690,12035.5,-11.2
 2020-06-14,East Ayrshire,12198,11914.5,2.4
 2020-06-14,East Dunbartonshire,8308,9421.5,-11.8
 2020-06-14,East Lothian,6783,7210.5,-5.9
 2020-06-14,East Renfrewshire,6151,6413.5,-4.1
+2020-06-14,City of Edinburgh,25396,26412,-3.8
 2020-06-14,Falkirk,12690,12708.5,-0.1
 2020-06-14,Fife,26961,29498,-8.6
 2020-06-14,Glasgow City,50388,52324,-3.7
@@ -732,6 +826,7 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-06-14,Dumfries and Galloway,13969,14643.5,-4.6
 2020-06-14,Fife,26961,29498,-8.6
 2020-06-14,Highland,25056,27480.5,-8.8
+2020-06-14,Na h-Eileanan Siar,1359,1437.5,-5.5
 2020-06-14,North Ayrshire,12253,13391,-8.5
 2020-06-14,North Lanarkshire,30241,30628.5,-1.3
 2020-06-14,Orkney Islands,1493,1475.5,1.2
@@ -743,3 +838,28 @@ week_ending,area_name,count,average_2018_2019,variation
 2020-06-14,South Lanarkshire,28909,30996,-6.7
 2020-06-14,West Dunbartonshire,8703,8719.5,-0.2
 2020-06-14,West Lothian,13523,13488,0.3
+2020-06-14,Na h-Eileanan Siar,1359,1437.5,-5.5
+2020-01-05,Stirling,6930,7955,-12.9
+2020-01-12,Stirling,12389,12922.5,-4.1
+2020-01-19,Stirling,11313,12388,-8.7
+2020-01-26,Stirling,11661,12121,-3.8
+2020-02-02,Stirling,11358,11987,-5.2
+2020-02-09,Stirling,12017,12499.5,-3.9
+2020-02-16,Stirling,11688,11847,-1.3
+2020-02-23,Stirling,10803,11397,-5.2
+2020-03-01,Stirling,11766,10957,7.4
+2020-03-08,Stirling,12049,13032.5,-7.5
+2020-03-15,Stirling,12702,11936,6.4
+2020-03-22,Stirling,16713,12284,36.1
+2020-03-29,Stirling,12772,11410.5,11.9
+2020-04-05,Stirling,9705,12193,-20.4
+2020-04-12,Stirling,10904,12156,-10.3
+2020-04-19,Stirling,10243,11453,-10.6
+2020-04-26,Stirling,10042,12184.5,-17.6
+2020-05-03,Stirling,11267,13302.5,-15.3
+2020-05-10,Stirling,10765,10929.5,-1.5
+2020-05-17,Stirling,11260,12082,-6.8
+2020-05-24,Stirling,11305,11978,-5.6
+2020-05-31,Stirling,10460,12295,-14.9
+2020-06-07,Stirling,11519,12172,-5.4
+2020-06-14,Stirling,10631,11043.5,-3.7

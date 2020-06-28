@@ -58,8 +58,8 @@ st_write(scotland, "../covid19_scot_map/clean_data/scotland.shp", append=FALSE)
 ## ----------------------------------------------------------------
 
 #  Data read
-covid <- read_csv("covid19_scot_map/raw_data/covid.csv") %>%
-  clean_names()
+covid <- read_csv("../covid19_scot_map/raw_data/covid.csv") %>%
+  clean_names() 
 
 # Shapefile read
 scotland_interm <- st_read("../covid19_scot_map/raw_data/SG_IntermediateZoneCent_2011/SG_IntermediateZone_Cent_2011.shp") %>% 
@@ -97,7 +97,17 @@ cardio_prescriptions <- read_csv("../covid19_scot_map/raw_data/cardio_extract.cs
          week_ending = str_replace_all(week_ending, " ", "-"),
          area_name = str_replace_all(area_name, "&", "and"),
          area_name = str_replace_all(area_name, "NHS ", ""),
-         week_ending = dmy(week_ending)) %>%
+         area_name = str_replace(area_name, "Edinburgh", "City of Edinburgh"),
+         area_name = str_replace(area_name, "Western Isles", "Na h-Eileanan Siar"),
+         week_ending = dmy(week_ending)) 
+# Splitting Clackmannanshire and Stirling
+stirling <- cardio_prescriptions %>% 
+  filter(area_name == "Clackmannanshire and Stirling") %>% 
+  mutate(area_name = str_replace(area_name, "Clackmannanshire and Stirling", "Stirling"))
+  
+cardio_prescriptions <- cardio_prescriptions %>%
+  rbind(stirling) %>% 
+  mutate(area_name = str_replace(area_name, "Clackmannanshire and Stirling", "Clackmannanshire")) %>% 
   filter(area_name %in% local_authorities)
 
 # save clean file
