@@ -90,7 +90,7 @@ ui <- fluidPage(
                       tabPanel("Deaths",
                                h4("Total COVID 19 related deaths to date"),
                                column(6,
-                                      leafletOutput("scot_covid_plot", width = 400, height = 550) 
+                                      leafletOutput("scot_covid_plot", width = 450, height = 550) 
                                       %>% withSpinner(color="#0dc5c1"),
                                tags$a(href="https://statistics.gov.scot/data/coronavirus-covid-19-management-information", "Data Source")),
                                column(6,
@@ -100,8 +100,7 @@ ui <- fluidPage(
                                
                       tabPanel("Cardiovascular Prescriptions", 
                                h4("Number of Cardiovascular Prescriptions in Scotland"),
-                               plotOutput("prescriptions")
-                               %>% withSpinner(color="#0dc5c1"),
+                               plotOutput("prescriptions"),
                                tags$a(href="https://scotland.shinyapps.io/phs-covid-wider-impact/", "Data Source")),
                       
                       tabPanel("Testing")
