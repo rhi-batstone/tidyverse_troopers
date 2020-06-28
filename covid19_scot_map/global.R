@@ -15,6 +15,7 @@ library(shinydashboard)
 library(shinythemes)
 library(rmapshaper)
 library(plotly)
+library(shinycssloaders)
 
 ##################################################################
 ##                        Data Wrangling                        ##
