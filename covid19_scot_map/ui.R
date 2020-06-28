@@ -54,11 +54,12 @@ ui <- fluidPage(
         
         mainPanel(
           column(6,
-                 leafletOutput("scot_plot", height = 600)
+                 textOutput("title1"),
+                 leafletOutput("scot_plot", height = 550) %>% withSpinner(color="#0dc5c1")
           ),
           column(6,
-                 
-                 plotlyOutput("eg_plot", height = 600)
+                 textOutput("title2"),
+                 plotlyOutput("eg_plot", height = 550) %>% withSpinner(color="#0dc5c1")
           ))
       )
     ),
@@ -67,12 +68,12 @@ ui <- fluidPage(
       title = "Scotland",
       
       # App title
-      titlePanel("Scotland Local Authorities"),
+      titlePanel("COVID-19 at a local level"),
       
       
       # Sidebar with a slider input for date and selector for data
       sidebarLayout(
-        sidebarPanel(
+        sidebarPanel(width = 3,
           h3("Local Authorities"),
           checkboxInput("bar", "All/None", value = T),
           checkboxGroupInput("local_auth", label = "Selector", 
@@ -84,18 +85,23 @@ ui <- fluidPage(
         
         
         
-        mainPanel(
+        mainPanel(width = 9,
           tabsetPanel(type = "tabs",
-                      tabPanel("Deaths", 
+                      tabPanel("Deaths",
+                               h4("Total COVID 19 related deaths to date"),
                                column(6,
-                                      leafletOutput("scot_covid_plot", width = 400, height = 600),
+                                      leafletOutput("scot_covid_plot", width = 400, height = 550) 
+                                      %>% withSpinner(color="#0dc5c1"),
                                tags$a(href="https://statistics.gov.scot/data/coronavirus-covid-19-management-information", "Data Source")),
                                column(6,
                                "Note: Some locations are named IZ followed by a number, please refer",
                                tags$a(href="https://www2.gov.scot/Topics/Statistics/sns/SNSRef/DZresponseplan", "here for more information."))
                                ),
                                
-                      tabPanel("Cardiovascular Prescriptions", plotOutput("prescriptions"),
+                      tabPanel("Cardiovascular Prescriptions", 
+                               h4("Number of Cardiovascular Prescriptions in Scotland"),
+                               plotOutput("prescriptions")
+                               %>% withSpinner(color="#0dc5c1"),
                                tags$a(href="https://scotland.shinyapps.io/phs-covid-wider-impact/", "Data Source")),
                       
                       tabPanel("Testing")

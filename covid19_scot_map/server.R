@@ -91,8 +91,9 @@ server <- function(input, output, session) {
       scale_fill_viridis_b() +
       labs(
         x = "Date",
-        y = "Count",
-        title = "Count by Health Board") +
+        y = "Count"
+        #title = "Count by Health Board"
+        ) +
       theme_classic() +
       theme(legend.position = 'none') 
       ) %>%
@@ -102,6 +103,12 @@ server <- function(input, output, session) {
   
   
   output$scot_covid_plot <- renderLeaflet({ 
+    
+    labels2 <- labels <- sprintf(
+      "<strong>%s</strong><br/>%g",
+      scotland_covid$Name,
+      scotland_covid$number_of_deaths
+    ) %>% lapply(htmltools::HTML)
     
     bins = c(0, 5, 17, max(scotland_covid$number_of_deaths))
     
@@ -121,7 +128,7 @@ server <- function(input, output, session) {
                      stroke = F,
                      radius = ~population_2018_based/1000,
                      color = ~pal(number_of_deaths),
-                     popup = ~Name
+                     popup = labels2
     )
   })
   
@@ -140,8 +147,7 @@ server <- function(input, output, session) {
     theme_classic() +
     labs(
         x = "Date",
-        y = "Prescription Count",
-        title = "Number of Cardiovascular Prescriptions in 2020"
+        y = "Number of Prescriptions"
       )
     
   })
@@ -152,6 +158,16 @@ server <- function(input, output, session) {
       selected = if (input$bar) local_authorities
     )
   })
+  
+  
+  output$title1 <- renderText({ 
+    paste(input$data)
+  })
+  
+  output$title2 <- renderText({ 
+    paste(input$data)
+  })
+  
   
   output$note <- renderText({
     
