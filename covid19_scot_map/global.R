@@ -11,6 +11,7 @@ library(tidyverse)
 library(sf)
 library(leaflet)
 library(shiny)
+library(shinydashboard)
 library(shinythemes)
 library(rmapshaper)
 library(plotly)
@@ -30,3 +31,5 @@ scotland_covid <- read_csv("clean_data/scotland_covid.csv")
 
 local_authorities <- unique(scotland_covid$local_authority) %>% 
   sort()
+
+cardio_prescriptions <- read_csv("clean_data/cardio_prescriptions.csv")

@@ -4,6 +4,11 @@ library(lubridate)
 library(sf)
 library(rmapshaper)
 
+
+## ----------------------------------------------------------------
+##                          Covid Management                     --
+## ----------------------------------------------------------------
+
 management <- read_csv("../covid19_scot_map/raw_data/covid19_management.csv") %>%
   clean_names()
 
@@ -27,6 +32,14 @@ management_clean <- management %>%
     date_code = as_date(date_code)
   )
 
+# save clean file
+write_csv(management_clean, "../covid19_scot_map/clean_data/management_clean.csv")
+
+## ----------------------------------------------------------------
+##                    Scotland Health Board shp                  --
+## ----------------------------------------------------------------
+
+
 ## Joining the shapefile to the data
 # from: https://data.gov.uk/dataset/27d0fe5f-79bb-4116-aec9-a8e565ff756a/nhs-health-boards
 scotland <- st_read("../covid19_scot_map/raw_data/SG_NHS_HealthBoards_2019/SG_NHS_HealthBoards_2019.shp") %>%
@@ -36,17 +49,24 @@ scotland <- st_read("../covid19_scot_map/raw_data/SG_NHS_HealthBoards_2019/SG_NH
   st_transform("+proj=longlat +datum=WGS84")
 
 
+# save clean file
+st_write(scotland, "../covid19_scot_map/clean_data/scotland.shp", append=FALSE)
+
+
 ## ----------------------------------------------------------------
 ##                    Intermediate Zone Data                     --
 ## ----------------------------------------------------------------
 
+#  Data read
 covid <- read_csv("covid19_scot_map/raw_data/covid.csv") %>%
   clean_names()
 
-
+# Shapefile read
 scotland_interm <- st_read("../covid19_scot_map/raw_data/SG_IntermediateZoneCent_2011/SG_IntermediateZone_Cent_2011.shp") %>% 
   st_transform("+proj=longlat +datum=WGS84")
 
+# Converting shapfile to tibble and extracting coordinates
+# (It is POINT geometry not polygons)
 scotland_covid <- scotland_interm %>%
   as_tibble() %>% 
   mutate(geometry = as.character(geometry),
@@ -57,8 +77,28 @@ scotland_covid <- scotland_interm %>%
   left_join(covid, by = c("Name" = "name_of_intermediate_zone"))
 
 
-
-st_write(scotland, "../covid19_scot_map/clean_data/scotland.shp", append=FALSE)
-write_csv(management_clean, "../covid19_scot_map/clean_data/management_clean.csv")
+# save clean file
 write_csv(scotland_covid, "../covid19_scot_map/clean_data/scotland_covid.csv")
 
+## ----------------------------------------------------------------
+##                    Cardiovascular Medication                  --
+## ----------------------------------------------------------------
+
+# Creating local authorities to match datasets 
+local_authorities <- unique(scotland_covid$local_authority)
+
+cardio_prescriptions <- read_csv("../covid19_scot_map/raw_data/cardio_extract.csv") %>% 
+  mutate(week_ending = str_replace(week_ending, "Jan", "01"),
+         week_ending = str_replace(week_ending, "Feb", "02"),
+         week_ending = str_replace(week_ending, "Mar", "03"),
+         week_ending = str_replace(week_ending, "Apr", "04"),
+         week_ending = str_replace(week_ending, "May", "05"),
+         week_ending = str_replace(week_ending, "Jun", "06"),
+         week_ending = str_replace_all(week_ending, " ", "-"),
+         area_name = str_replace_all(area_name, "&", "and"),
+         area_name = str_replace_all(area_name, "NHS ", ""),
+         week_ending = dmy(week_ending)) %>%
+  filter(area_name %in% local_authorities)
+
+# save clean file
+write_csv(cardio_prescriptions, "../covid19_scot_map/clean_data/cardio_prescriptions.csv")

@@ -1,4 +1,4 @@
-server <- function(input, output) {
+server <- function(input, output, session) {
 
   # Create reactive dataset
   management_reactive <- reactive({
@@ -76,7 +76,7 @@ server <- function(input, output) {
   })
 
   ##################################################################
-  ##              place holder for Johnny's data viz              ##
+  ##                  plot for management values                  ##
   ##################################################################
 
 
@@ -121,6 +121,29 @@ server <- function(input, output) {
                      stroke = F,
                      radius = ~population_2018_based/1000,
                      color = ~pal(number_of_deaths),
+    )
+  })
+  
+  ##################################################################
+  ##                  plot for prescription meds                  ##
+  ##################################################################
+  
+  output$prescriptions <- renderPlot({
+    
+  cardio_prescriptions %>% 
+    filter(area_name %in% input$local_authorities) %>% 
+    group_by(week_ending) %>%
+    mutate(avg = mean(variation)) %>% 
+    ggplot(aes(x = week_ending)) +
+    geom_line(aes(y = avg)) +
+    theme_classic()
+    
+  })
+  
+  observe({
+    updateCheckboxGroupInput(
+      session, 'local_auth', choices = local_authorities,
+      selected = if (input$bar) local_authorities
     )
   })
   
