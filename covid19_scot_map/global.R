@@ -1,6 +1,6 @@
 ## code for deploying to shiny.io
 # library(rsconnect)
-# deployApp("../covid19_scot_map/")
+# deployApp("covid19_scot_map/")
 
 #################################################################
 ##                          Libraries                          ##
@@ -34,3 +34,6 @@ local_authorities <- unique(scotland_covid$local_authority) %>%
   sort()
 
 cardio_prescriptions <- read_csv("clean_data/cardio_prescriptions.csv")
+
+
+corner_element = HTML(paste0('<a href=',shQuote(paste0("https://www.scottishtecharmy.org/")), '>', 'Foo', '</a>'))

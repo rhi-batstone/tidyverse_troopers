@@ -86,33 +86,38 @@ server <- function(input, output, session) {
     ggplotly(management %>%
       filter(variable == input$data) %>%
       filter(date_code <= input$date) %>%
-      ggplot(aes(x = date_code, y = value, col = official_name)) +
+      ggplot(aes(x = date_code, y = value, col = official_name
+                 )) +
       geom_line() +
       scale_fill_viridis_b() +
       labs(
         x = "Date",
-        y = "Count"
-        #title = "Count by Health Board"
+        y = "Count",
+        col = "Region"
         ) +
-      theme_classic() +
-      theme(legend.position = 'none') 
+        theme(
+          legend.text = element_text(size = 5)
+        ) +
+      theme_classic() #+
+      #theme(legend.position = 'none') 
       ) %>%
-      add_trace(colors = "Dark2")
+      add_trace(colors = "Dark2") 
     
   })
   
   
   output$scot_covid_plot <- renderLeaflet({ 
     
-    labels2 <- labels <- sprintf(
-      "<strong>%s</strong><br/>%g",
-      scotland_covid$Name,
-      scotland_covid$number_of_deaths
-    ) %>% lapply(htmltools::HTML)
+    # this needs to be reactive i think
+    # labels2 <- labels <- sprintf(
+    #   "<strong>%s</strong><br/>%g",
+    #   scotland_covid$Name,
+    #   scotland_covid$number_of_deaths
+    # ) %>% lapply(htmltools::HTML)
     
     bins = c(0, 5, 17, max(scotland_covid$number_of_deaths))
     
-    pal <- colorBin(c("#FAF799", "orange", "#FF0000"), 
+    pal <- colorBin(c("#f1ed0e", "orange", "#FF0000"), 
                   domain = scotland_covid$number_of_deaths, 
                   bin = bins)
   
@@ -128,7 +133,7 @@ server <- function(input, output, session) {
                      stroke = F,
                      radius = ~population_2018_based/1000,
                      color = ~pal(number_of_deaths),
-                     popup = labels2
+                     popup = ~Name
     )
   })
   
@@ -178,5 +183,6 @@ server <- function(input, output, session) {
     }
     
   }) 
+  
   
 }
