@@ -24,10 +24,15 @@ ui <- fluidPage(
     # Contains the MVP and a broad overview of the data
     tabPanel(
       title = "Health Boards",
-
+      
+      # tabsetPanel(
+      #   type = "tabs",
+      #   tabPanel( title = "Overview",
+                  
       # App title
       titlePanel(h3("COVID-19 Management in Scotland")),
-
+     
+      
       fluidRow(
         class = "controls",
         # Sidebar with a slider input for date and selector for data
@@ -65,6 +70,9 @@ ui <- fluidPage(
           tags$a(href = "https://statistics.gov.scot/data/coronavirus-covid-19-management-information", target="_blank", "Data Source")
         )
       ),
+      
+      
+      
       # main body
       fluidRow(
         column(
@@ -77,8 +85,58 @@ ui <- fluidPage(
           # textOutput("title2"),
           plotlyOutput("eg_plot", height = 550) %>% withSpinner(color = "#0dc5c1")
         )
-      )
-    ),
+      ),
+    
+    
+    ##################  Johnny
+    # tabPanel(title = "Indepth",
+    #          titlePanel(h3("Covid-19 in Scotland")),
+    #          
+    #          sidebarLayout(
+    #            
+    #            sidebarPanel(
+    #              
+    #              titlePanel("Data Selection"),
+    #              
+    #              
+    #              helpText("What shall we look at?"),
+    #              
+    #              # Main userselection starts here
+    #              
+    #              
+    #              selectInput(inputId = "area_choice",
+    #                          label = h3("Region"), 
+    #                          choices = area_names,
+    #                          selected = "Scotland"
+    #              ),
+    #              
+    #              
+    #              selectInput(inputId = "data_set_choice",
+    #                          label = h3("Data Set"),
+    #                          choices = c(NULL, "Testing - Daily", "Testing - Cumulative", "COVID-19 patients in hospital", "COVID-19 patients in ICU"),
+    #                          selected = NULL,
+    #                          multiple = FALSE),
+    #              
+    #              
+    #              checkboxGroupInput("variable_choice", label = h3("Data"),
+    #                                 choices = NULL,
+    #                                 selected = NULL)
+    #              
+    #            ),
+    #            
+    #            
+    #            mainPanel(
+    #              
+    #              
+    #              plotOutput("covid_plot")
+    #            
+    #            )
+             
+             
+    
+    ################### johnny
+    #  )))
+  ),
 
     tabPanel(
       title = "Local Authorities",
@@ -126,11 +184,11 @@ ui <- fluidPage(
               tags$a(href = "https://scotland.shinyapps.io/phs-covid-wider-impact/", target="_blank", "Data Source")
             )
 
-           # tabPanel("Testing")
+           
           )
-        )
-      )
-    ),
+        ) # main panel
+      )# sidebar
+    ), # close local authorities
     tabPanel(
       title = "About Us",
 
@@ -138,7 +196,9 @@ ui <- fluidPage(
       titlePanel(div(img(
         src = "tt_text.jpg",
         width = "100%"
-      ))),
+      )
+      )
+      ),
 
 
       fluidRow(
@@ -205,7 +265,7 @@ ui <- fluidPage(
         ),
 
         column(1)
-      )
-    )
-  )
-)
+        ) # about us
+      )#about us
+  ) # Nav bar
+) #fluid Row

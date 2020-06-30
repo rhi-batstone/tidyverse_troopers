@@ -2,6 +2,7 @@ library(tidyverse)
 library(janitor)
 library(lubridate)
 library(sf)
+library(readxl)
 library(rmapshaper)
 
 
@@ -112,3 +113,88 @@ cardio_prescriptions <- cardio_prescriptions %>%
 
 # save clean file
 write_csv(cardio_prescriptions, "../covid19_scot_map/clean_data/cardio_prescriptions.csv")
+
+
+##################################################################
+##                    Johnny cleaning script                    ##
+##                              #                               ##
+##################################################################
+
+
+# 
+# 
+# 
+# cumulative <- c("Cumulative people tested for COVID-19 - Positive",
+#                 "Cumulative people tested for COVID-19 - Negative",
+#                 "Total number of COVID-19 tests carried out by Regional Testing Centres - Cumulative",
+#                 "Total number of COVID-19 tests carried out by NHS Labs - Cumulative",
+#                 "Cumulative people tested for COVID-19 - Total")
+# 
+# 
+# daily <- c("Daily people found positive",
+#            "Total number of COVID-19 tests carried out by NHS Labs - Daily",
+#            "Total number of COVID-19 tests carried out by Regional Testing Centres - Daily")
+# 
+# 
+# cumulative_care <- c("Cumulative number of suspected COVID-19 cases",
+#                      "Cumulative number that have reported a suspected COVID-19 case",
+#                      "Cumulative number that have reported more than one suspected COVID-19 case")
+# 
+# daily_care <- c("Daily number of new suspected COVID-19 cases","Number of staff reported as absent",
+#                 "Number with current suspected COVID-19 cases","Adult care homes which submitted a return", "Total number of staff in adult care homes which submitted a return")
+# 
+# proportion_care <- c("Proportion that have reported a suspected COVID-19 case", "Proportion with current suspected COVID-19 cases", "Response rate", "Staff absence rate")
+# 
+# 
+# 
+# # 1. Comprehensive data and regions
+# management_johnny <- read_csv("covid19_scot_map/raw_data/covid19_management.csv") %>%
+#   clean_names() %>%
+#   select(-units) %>%
+#   rename(date = date_code, area_code = feature_code
+#   ) %>%
+#   mutate(value = as.numeric(value)) %>%
+#   drop_na()
+# 
+# 
+# 
+# # 2. Populations
+# pop_estimates <- read_excel("covid19_scot_map/raw_data/pop_estimates.xlsx",
+#            sheet = "Table 9", col_names = FALSE,
+#            skip = 5) %>%
+#   # mutate(...1 = ifelse(...1 == "S92000003", "SB0801", ...1)) %>%
+#   rename(area_code = ...1,
+#          area = ...2,
+#          population = ...3,
+#          square_km = ...4,
+#          people_per_square_km = ...5) %>%
+#   drop_na()
+# 
+# 
+# 
+# 
+# 
+# # 3. Comprehensive data, regions and populations
+# comprehensive_data_with_reg_pop <- management_johnny %>%
+#   left_join(pop_estimates, by = "area_code") %>%
+#   #relocate(c(date, area, variable)) %>%
+#   select(-official_name, -area_code) %>%
+#   mutate(variable = ifelse(variable == "Delayed discharges", "General - Delayed discharges", variable)) %>%
+#   mutate(variable = ifelse(variable == "Number of COVID-19 confirmed deaths registered to date", "General - Number of COVID-19 confirmed deaths registered to date", variable)) %>%
+#   separate(variable, c("data_set", "variable"), " - ", extra = "merge") %>%
+#   mutate(date = as.Date(date)) %>%
+#   mutate(data_set = ifelse(variable %in% cumulative, "Testing - Cumulative", data_set)) %>%
+#   mutate(data_set = ifelse(variable %in% daily, "Testing - Daily", data_set)) %>%
+#   mutate(data_set = ifelse(variable %in% cumulative_care, "Adult Care Homes - Cumulative", data_set)) %>%
+#   mutate(data_set = ifelse(variable %in% daily_care, "Adult Care Homes - Daily", data_set)) %>%
+#   mutate(data_set = ifelse(variable %in% proportion_care, "Adult Care Homes - Proportion", data_set)) %>%
+#   write_csv("covid19_scot_map/clean_data/comprehensive_data_with_populations.csv")
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
