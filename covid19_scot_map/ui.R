@@ -25,9 +25,7 @@ ui <- fluidPage(
     tabPanel(
       title = "Health Boards",
       
-      # tabsetPanel(
-      #   type = "tabs",
-      #   tabPanel( title = "Overview",
+
                   
       # App title
       titlePanel(h3("COVID-19 Management in Scotland")),
@@ -88,54 +86,6 @@ ui <- fluidPage(
       ),
     
     
-    ##################  Johnny
-    # tabPanel(title = "Indepth",
-    #          titlePanel(h3("Covid-19 in Scotland")),
-    #          
-    #          sidebarLayout(
-    #            
-    #            sidebarPanel(
-    #              
-    #              titlePanel("Data Selection"),
-    #              
-    #              
-    #              helpText("What shall we look at?"),
-    #              
-    #              # Main userselection starts here
-    #              
-    #              
-    #              selectInput(inputId = "area_choice",
-    #                          label = h3("Region"), 
-    #                          choices = area_names,
-    #                          selected = "Scotland"
-    #              ),
-    #              
-    #              
-    #              selectInput(inputId = "data_set_choice",
-    #                          label = h3("Data Set"),
-    #                          choices = c(NULL, "Testing - Daily", "Testing - Cumulative", "COVID-19 patients in hospital", "COVID-19 patients in ICU"),
-    #                          selected = NULL,
-    #                          multiple = FALSE),
-    #              
-    #              
-    #              checkboxGroupInput("variable_choice", label = h3("Data"),
-    #                                 choices = NULL,
-    #                                 selected = NULL)
-    #              
-    #            ),
-    #            
-    #            
-    #            mainPanel(
-    #              
-    #              
-    #              plotOutput("covid_plot")
-    #            
-    #            )
-             
-             
-    
-    ################### johnny
-    #  )))
   ),
 
     tabPanel(
@@ -170,7 +120,7 @@ ui <- fluidPage(
               # column(6,
               leafletOutput("scot_covid_plot", width = 900, height = 500)
               %>% withSpinner(color = "#0dc5c1"),
-              tags$a(href = "https://statistics.gov.scot/data/coronavirus-covid-19-management-information", target="_blank", "Data Source"),
+              tags$a(href = "https://www.nrscotland.gov.uk/statistics-and-data/statistics/statistics-by-theme/vital-events/general-publications/weekly-and-monthly-data-on-births-and-deaths/deaths-involving-coronavirus-covid-19-in-scotland/archive", target="_blank", "Data Source"),
               br(),
               # column(6,
               "Note: Some locations are named IZ followed by a number, please refer",
