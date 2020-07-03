@@ -60,6 +60,8 @@ ui <- fluidPage(
             selected = "Testing - Cumulative people tested for COVID-19 - Positive"
           ),
         ),
+        
+        
         column(
           4,
           textOutput("note"),
