@@ -21,9 +21,10 @@ server <- function(input, output, session) {
       left_join(management_reactive(), by = c("HBName" = "official_name"))
 
     # creates bins and palette for leaflet plot
-    #bins <- seq(0, max(management_reactive()$total), length.out = 6)
+    #bins = c(0, 10, 20, max(management_reactive()$total))
+  # bins <- seq(0, max(management_reactive()$value), length.out = 6)
     
-    pal <- colorBin("plasma", domain = scotland_count$value, bins = 5)
+    pal <- colorBin("plasma", domain = scotland_count$value, bins = 6)
 
     # creates hover over labels
     labels <- sprintf(

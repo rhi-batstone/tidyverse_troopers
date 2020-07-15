@@ -25,8 +25,9 @@ library(shinycssloaders)
 management <- read_csv("clean_data/management_clean.csv")
 
 #shape file and reducing the polygons to increase render speed
-scotland <- st_read("clean_data/scotland.shp", quiet = TRUE) %>%
-  ms_simplify(keep = 0.025)
+scotland <- st_read("clean_data/scotland.shp", quiet = TRUE) 
+#%>%
+ # ms_simplify(keep = 0.025)
 
 scotland_covid <- read_csv("clean_data/scotland_covid.csv")
 
